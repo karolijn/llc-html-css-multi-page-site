@@ -17,7 +17,9 @@ html {
 .clearfix:after {
   clear: both;
 }
-
+html, body {
+  height: 100%;
+}
 body {
   padding: 0;
   margin: 0;
@@ -90,6 +92,10 @@ nav a {
 
 /* HOME PAGE
 -----------------------------------------*/
+.home {
+  background: url(../images/background-6.jpg) no-repeat;
+  background-size: cover;
+}
 .home header {
   position: static;
   background: transparent;
@@ -112,33 +118,12 @@ nav a {
   width: 50%;
   margin-right: 20px;
 }
-
-
-/* FOOTER
------------------------------------------*/
-footer {
+.quote {
   clear: both;
+  text-align: center;
+  padding-top: 20px;
 }
 
-/* sticky footer */
-html, body {
-  height: 100%;
-}
-.page-wrap {
-  min-height: 100%;
-  margin-bottom: -35px; /* equal to footer height */
-}
-.page-wrap:after {
-  content: "";
-  display: block;
-}
-footer, .page-wrap:after {
-  height: 35px; /* must be the same height as footer */
-}
-footer {
-  background: #222;
-  color: #ccc;
-}
 
 
 

@@ -43,17 +43,25 @@
         <li><i class="fa fa-twitter"></i><a href="http://twitter.com/karolijn" target="_blank">@karolijn</a></li>
         </ul>
     </div>
+    <div class="presenter-notes">
+            <p>It's important to note at the beginning that a lot of material will be covered and their site will not be 100% complete by the end of the day. The goal of the day is to learn about the concepts. However, they will have about 75% of the project done by end of the day and  "homework" and additional resources are provided at the end to help them complete their project. It's a lot to cover in one day and today will just be a "guided tour."</p>
+            <p>All code blocks in white are editable and CSS changes will be reflected in the slide.  For exercises, all instructions listed under <strong>bonus</strong> are for those who complete the exercises early to make sure learners at all different levels have something to work on.</p>
+        </div>
     </header>
 
     <main>
-        <section class="slide centered project" data-markdown>
-##Today's Project
+        <section class="slide centered project">
+            <h2>Today’s Project</h2>
 
-Follow this [link](http://ladieslearningcode.github.io/llc-html-css-multi-page-site/project/final/) to see the whole project!
+            <p>Follow this <a href="http://ladieslearningcode.github.io/llc-html-css-multi-page-site/project/final/">link</a> to see the whole project!</p>
 
-![project home page](framework/img/workshop/project1.jpg)
-![project about page](framework/img/workshop/project2.jpg)
-![project contact page](framework/img/workshop/project3.jpg)
+            <img src="framework/img/workshop/project1.jpg" alt="project home page" title="">
+            <img src="framework/img/workshop/project2.jpg" alt="project about page" title="">
+            <img src="framework/img/workshop/project3.jpg" alt="project contact page" title="">
+
+            <div class="presenter-notes" style="text-align:left;">
+                <p>It might be helpful to leave the final project open in an extra tab to be able to refer to it throughout the day to show what each exercise is trying to work towards.</p>
+            </div>
         </section>
 
         <section class="slide" data-markdown>
@@ -68,7 +76,6 @@ Follow this [link](http://ladieslearningcode.github.io/llc-html-css-multi-page-s
 ###Afternoon
 
 * More CSS & HTML
-* Final touches
 * Next steps
         </section>
 
@@ -77,7 +84,7 @@ Follow this [link](http://ladieslearningcode.github.io/llc-html-css-multi-page-s
 
 **[Google Chrome](https://www.google.com/intl/en-CA/chrome/browser/)** - Choose a modern web browser that supports current web standards and has good development tools. To set Chrome as your default browser, follow [these instructions](https://support.google.com/chrome/answer/95417?hl=en). Another good option is Firefox. Visit [browsehappy.com](http://browsehappy.com) for more info about modern browsers.
 
-You can view the source of any web page by right-clicking (or two-finger tap) on any web page! Try visiting http://ladieslearningcode.com and view the source. That's HTML.
+You can view the source of any web page by right-clicking (or two-finger tap) on *any* web page! Let's go to http://ladieslearningcode.com and view the source. That's HTML.
 
 **Developer tools** take it a step further and allows us to *inspect* any web page making it easier to test and debug code. The tools can be accessed in 3 ways:
 
@@ -112,144 +119,34 @@ A website is basically a collection of web pages, aka **HTML documents**, that c
 | ![project home page](framework/img/workshop/project1.jpg) | ![project home page](framework/img/workshop/project2.jpg) | ![project home page](framework/img/workshop/project3.jpg) |
         </section>
 
-        <section class="slide" data-markdown>
-##What exactly *is* a website?
-
-To get your site online and available to the public, the folder containing the HTML documents and related files (images, css, javascript files, etc) must be moved to a *server* that *hosts* websites.
-
-To move web files from your computer to a server, an FTP program must be used (more on this later).
-
-![web request process](framework/img/workshop/web-server.png)
-        </section>
-
         <section class="slide basic-web-page">
             <h2>A Basic Web Page</h2>
 
             <p>Web pages are generally built using 3 web languages:</p>
 
-            <p><strong>HTML (Hypertext Markup Language)</strong> is a <em>markup</em> language and is is used to define the content.</p>
+            <p><strong>HTML (Hypertext Markup Language)</strong> is a <em>markup</em> language used to define the content.</p>
             
             <div class="example">
             <p>I'm just a paragraph.</p>
             </div>
             
-            <p><strong>CSS (Cascading Style Sheets)</strong> is a <em>stylesheet</em> language and is used to create the presentation and look of a site.</p>
+            <p><strong>CSS (Cascading Style Sheets)</strong> is a <em>style sheet</em> language used to create the presentation and look of a site.</p>
 
             <div class="example css">
             <p>I'm a paragraph with <span>style</span>.</p>
             </div>
 
-            <p><strong>JavaScript</strong> is a <em>programming</em> language and is used to define the behavior and to add functionality to a website.</p>
+            <p><strong>JavaScript</strong> is a <em>programming</em> language used to define the behavior and add functionality to a website.</p>
 
             <div class="example">
             <p onclick="alert('clicked!');">I'm a paragraph that can be clicked. Try it!</p>
             </div>
         </section>
 
-        <section class="slide title" data-markdown>
-            #Dive into HTML
-            ##The content layer
-        </section>
-
-        <section class="slide">
-            <h2>Writing HTML</h2>
-
-            <p>HTML was created for web browsers to read. To display content properly in the browser, use <strong>tags</strong>. Below are the basic HTML tags required for all web pages. This makes perfect sense to a web browser:</p>
-
-            <pre><code>&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;</code></pre>
-
-            <p>However, for us humans, whitespace through indentation will make your HTML easier to read.</p>
-
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-        </section>
-        
-        <section class="slide" data-markdown>
-##HTML tags
-
-The structure of a web page is defined by HTML tags. Left & right angled brackets (`shift` + comma key and `shift` + period key ) surround the tag name. Tags *usually* come in pairs — an opening tag and a closing tag with a forward slash:
-
-```xml
-&lt;tagname>&lt;/tagname>
-```
-The are many different HTML tags used to create structure and add semantics (meaning) to the content. For example, any content between the `&lt;html>&lt;/html>` tag tells the browser that it is HTML code and content between the `&lt;title>&lt;/title>` tag describes the web page title.
-
-```xml
-&lt;p>I'm a paragraph because I'm wrapped by paragraph tags.&lt;/p>
-```
-Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules to make sense to the browser. This is referred to as **syntax**.
-
-Tags describe the content that is inside of them, **not** what they look like.  That's what CSS is for.
-        </section>
-
-        <section class="slide">
-            <h2>Nesting HTML tags</h2>
-
-            <p>Tags are often nested within other tags. Nested elements make up the <em>document tree</em> &amp; the relationships are just like a family tree; branches of ancestors, parents, children, siblings, etc.</p>
-            
-            <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;&lt;!-- child of html tag, parent of title tag --&gt;
-        &lt;title&gt;&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;&lt;!-- child of html tag --&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>   
-
-            <ul>
-                <li>
-                    The <code>&lt;html&gt;</code> tag is always first and <strong>all</strong> other tags are nested within <code>&lt;html&gt;</code>.
-                </li>
-                <li>
-                    <code>&lt;head&gt;</code> is the child of <code>&lt;html&gt;</code> and the parent of the <code>&lt;title&gt;</code> tag.
-                </li>
-                <li>
-                    What is the relationship of <code>&lt;title&gt;</code> to the <code>&lt;head&gt;</code> tag? <span class="delayed"><em>child element</em></span>
-                </li>
-                <li class="delayed">
-                    What is the relationship between the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> tags? <span class="delayed"><em>siblings</em></span>
-                </li>
-            </ul>
-        </section>
-
-        <section class="slide">
-            <h2>Basic HTML Document</h2>
-
-            <p>These tags are needed for every webpage. Let's talk about what each tag means.</p>
-
-    <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-    &lt;head&gt;
-        &lt;title&gt;&lt;/title&gt;
-    &lt;/head&gt;
-    &lt;body&gt;
-    &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-
-            <p><code>doctype</code> - Always the first line though not an HTML tag. It tells the browser what <em>version</em> of HTML the document is written in.</p>
-
-            <p><code>&lt;html&gt;</code> - It is always first, making it the ancestor of all other elements. It identifies the document as HTML.</p>
-
-            <p><code>&lt;head</code>&gt;  - Contains information about the web page but doesn’t display on the web page itself.  Examples include the page title (<code>&lt;title&gt;&lt;/title&gt;</code>) and links to external CSS files.</p>
-
-            <p><code>&lt;body&gt;</code> - All content to be displayed in the browser window, also known as the viewport, goes between the body tags.</p>
-        </section>
-        
-        <section class="slide title" data-markdown>
-            #Organizing your files
-            ##Creating web pages and file structures
-        </section>
-        
         <section class="slide">
             <h2>Setting Up Our Work Flow</h2>
 
-            <p>Inside of the folder you downloaded today (<strong>llc-html-css-multi-page-site-master</strong>), there are many more folders and files that contain different content.</p>
+            <p>Inside of the folder you downloaded today (<strong>llc-html-css-multi-page-site-master</strong>), there are many folders and files that contain different content.</p>
 
     <pre><code>llc-html-css-multi-page-site-master
     |-- framework // Contains files needed for slide presentation. Do not edit!
@@ -265,20 +162,113 @@ Tags describe the content that is inside of them, **not** what they look like.  
         <section class="slide" data-markdown>
 ##Setting Up Our Work Flow
 
-To open the project files in the browser and text editor, follow these instructions:
+Let's open the project files in the browser and text editor.
 
 1. Open Sublime Text and go to **File > Open**.
 1. Navigate to the **Project** folder (inside the folder you downloaded with today's slides).  
 With the entire folder selected, select **Open**.
-1. The folder will appear in the side bar. Double click on **index.html** in the sidebar to open it.  
-Basic HTML tags have already been included in this file.
-1. Right click or two finger tap and select **Open in Browser**. This will open the HTML file in your *default* browser. 
-
+1. The folder will appear in the side bar. Double click on **index.html** in the sidebar to open it. The basic HTML tags for all web pages have been included in this file.
+1. Right click or two finger tap in Sublime and select **Open in Browser**. This will open the HTML file in your *default* browser. 
+    
 What do you see? Your page should look like [exercise 1](project/examples/exercise1.html).
+     
+        </section>
+
+        <section class="slide">
+            <h2 id="making-changes">Making changes</h2>
+
+            <p>Let's make a change. Replace the “your name here” content, save the file, and refresh your browser.</p>
+
+            <p>This will be your work flow for the day.</p>
+
+            <ol>
+                <li>update the code</li>
+                <li>save the file in Sublime</li>
+                <li>refresh the browser</li>
+            </ol>
+
+            <p><strong>Protip!</strong> Use keyboard shortcuts to improve your work flow.<br>
+            <code>ctrl/cmnd + s</code> to save<br>
+            <code>ctrl/cmnd + r</code> to refresh the browser</p>
+            <div class="presenter-notes">
+                <p>Let the learners know that there is an exercise coming up very soon to update the rest of the page. This is just to introduce them to the update/save/refresh flow and to break up the lecture a bit more.</p>
+            </div>
+        </section>
+
+        <section class="slide title" data-markdown>
+            #What is HTML?
+            ##The content layer
         </section>
 
         <section class="slide" data-markdown>
-##HTML content: adding text
+##HTML tags
+
+HTML was created for web browsers to read. To display content properly in the browser, use **tags**. Left & right angled brackets (`shift` + comma key and `shift` + period key ) surround the tag name. Tags *usually* come in pairs — an opening tag and a closing tag with a forward slash:
+
+```xml
+&lt;tagname>&lt;/tagname>
+```
+Just like the different languages that we speak and write, HTML has to follow proper "grammar" rules too. This is referred to as **syntax**. Also, note that tags are used to describe the content, **not** what they look like.  That's what CSS is for.
+
+The are many different HTML tags used to create structure and add semantics (meaning) to the content.
+
+```xml
+&lt;p>I'm a paragraph because I'm wrapped by paragraph tags.&lt;/p>
+```
+        </section>
+
+        <section class="slide">
+            <h2>Nesting HTML tags</h2>
+
+            <p>Tags are often nested within other tags and make up the <em>document tree</em>. The relationships are just like a family tree; branches of ancestors, parents, children, siblings, etc. Also, whitespace through indentation of nested elements makes HTML easier to read.</p>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;&lt;!-- child of html tag, parent of title tag --&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;&lt;!-- child of html tag --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>   
+
+            <ul>
+                <li>
+                    The <code>&lt;html&gt;</code> tag is always first and <strong>all</strong> other tags are nested within <code>&lt;html&gt;</code>.
+                </li>
+                <li>
+                    What is the relationship of <code>&lt;title&gt;</code> to the <code>&lt;head&gt;</code> tag? <span class="delayed"><em>child element</em></span>
+                </li>
+                <li class="delayed">
+                    What is the relationship between the <code>&lt;head&gt;</code> and <code>&lt;body&gt;</code> tags? <span class="delayed"><em>siblings</em></span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="slide" data-markdown>
+##BASIC HTML DOCUMENT
+
+We've seen these tags in our project file. These are the basic HTML tags required for every web page. 
+
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+        &lt;head&gt;
+            &lt;title&gt;&lt;/title&gt;
+        &lt;/head&gt;
+        &lt;body&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+    
+* `doctype` - Though not an HTML tag, it is always the first line. It tells the browser what version of HTML the document is written in.
+* `&lt;html>` - Always first, making it the ancestor of all other elements. It identifies the document as HTML.
+* `&lt;head>` - Contains information about the web page but doesn’t display on the web page itself. Examples include the page title (&lt;title>&lt/title>) and links to external CSS files.
+* `&lt;body>` - All content to be displayed in the browser window, also known as the viewport, goes between the `body` tags.
+        </section>
+        
+        <section class="slide title" data-markdown>
+            #Adding content
+        </section>
+
+        <section class="slide" data-markdown>
+##Adding text
 
 Heading tags are used for headings / page titles. There are six headings tags ranging from `&lt;h1>` to `&lt;h6>` and follow a hierarchy. `&lt;h1>` is the most significant heading on the page.
 
@@ -302,34 +292,37 @@ Visit &lt;a href="http://ladieslearningcode.com">Ladies Learning Code&lt;/a>.
 ```
         </section>
 
-        <section class="slide" data-markdown>
-##Exercise #1 - Making & Saving Changes (10 mins)
+        <section class="slide">
+            <h2>Exercise #1 - Updating your home page (10 mins)</h2>
 
-1. In your text editor (Sublime Text), update your name and tagline
-    * change the text *in between* the `&lt;h1>&lt;/h1>` and `&lt;h2>&lt;/h2>` tags
-1. Save your file using keyboard shortcuts, **COMMAND** + **S** or **CONTROL** + **S**, or **File > Save**.
-1. Go back to your browser and refresh it to see the changes.  
-    * Use the rounded arrow in the right of the browser's address bar or use keyboard shortcut, **COMMAND/CONTROL** + **R**.
-1. Change the content in the `&lt;title>&lt;/title>` tag. Where do you see this change?
-1. Update the footer content in the `&lt;p>&lt;/p>` to include a copyright message.
-    * Try using an HTML code for the copyright symbol. Here are some resources:  
-    http://character-code.com/ascii-table.php, http://unicode-table.com/en/#00A9
+            <ol>
+                <li>In the Sublime Text editor, update your name in the <code>h1</code> tag if you haven’t already.</li>
+                <li>Add your tag line under your name using the appropriate heading tag.</li>
+                <li>Change the content in the <code>title</code> tag. Where do you see this change?</li>
+                <li>Add a copyright message using a paragraph (<code>p</code>) tag <em>inside</em> of the <code>footer</code> tag.</li>
+            </ol>
 
-Your page should now look similar to [exercise1-updated.html](project/examples/exercise1-updated.html)
+            <p><strong>Bonus:</strong> Try using an HTML code for the copyright <em>symbol</em>. Here are some resources: <br>
+            <a href="http://character-code.com/ascii-table.php">http://character-code.com/ascii-table.php</a> <br>
+            <a href="http://unicode-table.com/en/#00A9">http://unicode-table.com/en/#00A9</a></p>
 
-**Protip!** Every time you make a change to your web page, don't forget to save and refresh your browser!
+            <p>Don’t forget to save and refresh your browser after each change!</p>
+
+            <p>Your page should now look similar to <a href="project/examples/exercise1-updated.html">exercise1-updated.html</a></p>
+
+            <div class="presenter-notes">
+                <p>Use the exercise time to follow along with the current exercise. Since the exercises switch between code-alongs and independent exercises throughout the day, it will be easier to demonstrate the code-alongs if your version is at the same state as the learners.</p>
+            </div>
         </section>
 
         <section class="slide project" data-markdown>
-##Adding content
+##Adding more HTML & content
 
-Let's take another look at the final version of the site to determine what content and HTML tags to add. 
+All three pages have the same headings, navigation links and footer information.  Though the home page header and navigation look different from the other two pages, don't worry about that just yet. Right now we are just concentrating on adding the HTML. 
 
 ![project home page](framework/img/workshop/project1.jpg)
 ![project about page](framework/img/workshop/project2.jpg)
 ![project contact page](framework/img/workshop/project3.jpg)
-
-All three pages have the same headings, navigation links and footer information.  Though the homepage's header and navigation is styled differently than the other two pages, don't worry about that just yet. Right now we are just concentrating on adding the HTML. 
 
 It's best to write as much HTML as possible before adding CSS to ensure that the proper tags are being used and to help keep your code organized and semantic.
         </section>
@@ -337,7 +330,7 @@ It's best to write as much HTML as possible before adding CSS to ensure that the
         <section class="slide" data-markdown>
 ##Navigation menu & Lists
 
-There are two kinds of lists in HTML: ordered (`ol`) for numbered lists & undordered (`ul`) for lists with bullets. *Content must be included only within the list item* (`li`).
+There are two kinds of lists in HTML: ordered (`ol`) for numbered lists & unordered (`ul`) for lists with bullets. Content must be included **only within the list item** (`li`).
 
 ```xml
 &lt;ul&gt;
@@ -356,11 +349,21 @@ Navigational elements are commonly created using lists. Since the order of the l
         </section>
         
         <section class="slide" data-markdown>
+            ##Class exercise: Add a navigation
+
+            Let's go back to **index.html** and add an unordered list, *before* `&lt;header>`, as a navigation menu for the three pages: **Home**, **About**, **Contact**.
+
+            It should look like this:
+            
+            ![nav list](framework/img/workshop/nav-list.png)
+        </section>
+
+        <section class="slide" data-markdown>
 ##Links & Attributes
 
 The purpose for creating page navigation is to link to other pages.  In addition to creating a list, we'll also need to add links to navigate between the three pages.
 
-Links are represented by the `&lt;a>` (anchor) tag. Unlike the tags we've looked at so far, anchor tags need additional information to specify a link location. An **attribute** can provide additional information and is added inside the opening tag. 
+Links are represented by the `&lt;a>` (anchor) tag. Unlike the tags we've looked at so far, anchor tags need additional information to specify where to link to. An **attribute** can provide additional information and is added inside the opening tag. 
 
 ```xml
 Visit &lt;a href="http://ladieslearningcode.com">Ladies Learning Code&lt;/a>.
@@ -390,9 +393,9 @@ Remember, a website is basically a collection of pages linking to other HTML pag
         <section class="slide" data-markdown>
 ##HTML5 Sectioning Tags
 
-Sometimes, multiple HTML elements need to be grouped together for organization and/or for styling. For example, the heading contains multiple elements inside of them (name and tagline) as well as the navigation on the about and contact page.
+Sometimes, multiple HTML elements need to be grouped together for organization and/or for styling. For example, the `header` contains multiple elements (name and tagline) as well as the navigation on the about and contact page.
 
-Prior to HTML5, the `&lt;div&gt;` tag was used for grouping elements together to create page layouts. The header and footer of the page might look something like this:
+Prior to HTML5, the `&lt;div&gt;` tag was used for grouping elements together to create page layouts. The header of the page might look something like this:
 
 ```xml
 &lt;div&gt;
@@ -432,50 +435,57 @@ More about HTML5 here: http://html5doctor.com
         <section class="slide" data-markdown>
 ##Good file naming habits
 
-To create an HTML page, name your file using an `.html` extension and it will open in your default browser (much like .pdf for PDF files or .doc for Word files).  
-
-Before we start another exercise, lets go over some best practices.
+To create an HTML page, name your file using an `.html` extension and it will open in your default browser (much like .pdf for PDF files or .doc for Word files). Before we start another exercise, let's go over some best practices.
 
 * Use lowercase letters.
     * **about.html** instead of **About.html** or **ABOUT.html**
-* Avoid s p a c e s. Use underscores (_) or dashes (-). 
-    * Dashes are generally preferred for SEO (search engine optimization).
-    * **business_hours.html** or **business-hours.html** instead of **business hours.html**
-    * The browser will interpret it as **business%20hours.html**
-* Avoid symbols like # & * in your file name.
+* Avoid s p a c e s. Use underscores (`_`) or dashes (`-`). 
+    * Note that [dashes are preferred for SEO](http://searchengineland.com/9-seo-quirks-you-should-be-aware-of-146465) (search engine optimization).
+    * **business-hours.html** instead of **business hours.html**
+    * The browser will interpret spaces as **business%20hours.html**
+* Avoid symbols like `#` `&` `*` in your file name.
 * Keep your file names concise, yet meaningful.
     * **about.html**, **contact.html** instead of **page1.html**, **page2.html**
 
 **Protip!** These file naming tips can be applied to any files such as images, folders, CSS, etc.
         </section>
 
-        <section class="slide" data-markdown>
-##Exercise #2 - Adding pages and content (20mins)
+        <section class="slide">
+            <h2>Exercise #2 - Adding pages and content (20mins)</h2>
 
-Follow the instructions below to complete the exercise. We are still just adding HTML content so don't worry about how to style the page elements just yet. If you get stuck, you can take a peek in the examples folder: [exercise2-home.html](project/examples/exercise2-home.html), [exercise2-about.html](project/examples/exercise2-about.html), [exercise2-contact.html](project/examples/exercise2-contact.html)
+            <p>We are just adding HTML content so don’t worry about how to style the page just yet. Writing code often requires a lot moving, deleting and adding content. Here are some more shortcuts that will come in handy to speed up your work flow.</p>
+            <p>
+                <code>ctrl/cmnd + c</code> to copy <br>
+                <code>ctrl/cmnd + x</code> to copy and cut <br>
+                <code>ctrl/cmnd + v</code> to paste <br>
+                <code>ctrl/cmnd + s</code> to save <br>
+                <code>ctrl/cmnd + r</code> to refresh browser
+            </p>
 
-**Protip!** Copy and paste repeated content using keyboard shortcuts to speed up your work flow.  
-`ctrl/cmnd + c` to copy  
-`ctrl/cmnd + x` to copy and cut    
-`ctrl/cmnd + v` to paste  
-`ctrl/cmnd + s` to save
-
-1. Create an About page and name it **about.html**
-    * Save it in the same folder as **index.html** (project folder)
-    * Be sure to include all the basic HTML tags
-    * Add the header and nav markup referenced in [HTML5 Sectioning Tags](index.html#slide23)
-    * Use **relative** links to navigate between pages
-    * Add the footer content created in **index.html** in the previous exercise.
-1. Create a Contact page and name it **contact.html**
-    * Follow the same instructions as the About page
-1. Add the same navigation markup and relative links to **index.html** *BUT* since the structure and style is different, put the nav HTML **above** the header tag, not inside like About and Contact. The order of the HTML will matter when we add CSS to it later.
-
-```xml
-&lt;nav&gt;
+            <ol>
+                <li>Create an new page (cmnd/ctrl + n) and name it <strong>about.html</strong>
+                    <ul>
+                        <li>Save it in the same folder as <strong>index.html</strong> (project folder)</li>
+                        <li>Be sure to include all the <a href="/#slide14">basic HTML tags</a></li>
+                        <li>Update the <code>title</code> tag to update the page title</li>
+                        <li>Add the HTML5 header and nav markup referenced in <a href="index.html#slide23">HTML5 Sectioning Tags</a></li>
+                        <li>Add <strong>relative</strong> links to navigate between pages</li>
+                        <li>Add the footer content created in <strong>index.html</strong></li>
+                    </ul>
+                </li>
+                <li>Create a new page and name it <strong>contact.html</strong>
+                    <ul>
+                        <li>Follow the same instructions as the About page (or just copy it and update the page title)</li>
+                    </ul>
+                </li>
+                <li>
+                    Add the same navigation markup and relative links to <strong>index.html</strong> <em>BUT</em> since the structure and style is different, put the nav HTML <strong>above</strong> the header tag, not inside like About and Contact. The order of the HTML will matter when we add CSS to it later. Here is the code sample for reference for the home page (index.html).
+                </li>
+<pre><code>&lt;nav&gt;
     &lt;ul&gt;
-        &lt;li&gt;&lt;a href="">Home&lt;/a>&lt;/li&gt;
-        &lt;li&gt;&lt;a href="">About&lt;/a>&lt;/li&gt;
-        &lt;li&gt;&lt;a href="">Contact&lt;/a>&lt;/li&gt;
+        &lt;li&gt;&lt;a href=""&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=""&gt;About&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=""&gt;Contact&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/nav&gt;
 
@@ -483,7 +493,13 @@ Follow the instructions below to complete the exercise. We are still just adding
     &lt;h1&gt;Jane Smith&lt;/h1&gt;
     &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;  
 &lt;/header&gt;
-```
+</code></pre>
+            </ol>
+            <p>If you get stuck, you can take a peek in the <strong>examples</strong> folder: <a href="project/examples/exercise2-home.html">exercise2-home.html</a>, <a href="project/examples/exercise2-about.html">exercise2-about.html</a>, <a href="project/examples/exercise2-contact.html">exercise2-contact.html</a></p>
+
+            <div class="presenter-notes">
+                <p>Check in with learners after 20mins. If majority of people have not started step 3, give them 5-10 more minutes.  If they are still not done after that, let them know they'll have some time in the next exercise to finish up.</p>
+            </div>
         </section>
 
         <section class="slide" data-markdown>
@@ -502,30 +518,39 @@ The syntax for comments start with `&lt;!--` and ends with `--&gt;`.
 ```
         </section>
 
-        <section class="slide">
-            <h2>Void / Self-closing Element</h2>
+        <section class="slide" data-markdown>
+##Image Types
+There are many different file types that can be used for the web. Each type is best suited for specific kinds of images. Use the format that maintains the best quality while reducing the file size.
 
-            <p>Void tags don’t format content — instead, they render or embed objects in the page. These tags <strong>do not</strong> come in pairs since they do not wrap content like the other tags we’ve been using so far. They are the content!</p>
+**jpg** - used for photographs with lots of rich colours or gradients
 
-            <p>The syntax is slightly different in the latest version of HTML so you may see it written in two ways. Prior to HTML5, these tags were self-closed with a forward slash (/) immediately before the right angled bracket (&gt;). In HTML5, void tags are not required to self close.</p>
+**png** - used for images with transparent or opaque backgrounds
 
-            <p>A common void tag is the <code>&lt;br /&gt;</code> or <code>&lt;br&gt;</code> tag used to create a line break.</p>
+**gif** - used for images with minimal colour variation and of course, for animated gifs!
 
-<pre><code class="xml">&lt;p&gt;This text&lt;br&gt;goes over&lt;br&gt;several&lt;br&gt;lines.&lt;/p&gt;</code></pre>
-            
-            <!-- example -->
-            <p>This text<br>goes over<br>several<br>lines.</p>
+**svg** - used for 2D graphics and is very scaleable. Based on XML and can be used as a image file or in the HTML document. When included as HTML, CSS can be used to style the svg!
 
-            <p>Another example of a void element is the horizontal rule, <code>&lt;hr&gt;</code> or <code>&lt;hr /&gt;</code>.</p>
+**More about SVG:** http://css-tricks.com/using-svg
+        </section>
 
-            <!-- example -->
-            <hr>
+        <section class="slide centered gif-wall" data-markdown>
+##Bonus: gif wall
+
+![](framework/img/workshop/mind-blown.gif)
+![](framework/img/workshop/kid.gif)
+![](framework/img/workshop/raccoon.gif)
+![](framework/img/workshop/bday-cake.gif)
+![](framework/img/workshop/otter.gif)
+
+[image source]()
         </section>
 
         <section class="slide">
             <h2>Adding images</h2>
 
-            <p>Images are another example of a void element.  Just like links, image tags also requires an attribute to define the file path of the image file. However, it uses the <code>src</code> attribute (not <code>href</code>).  The value can be an absolute or relative path. The below is an example of an absolute path.</p>
+            <p>Images are an example of a void element. It doesn't need a closing tag because it <em>is</em> the content. Read more about void elements <a href="framework/extras-void-elements.html">here</a>.</p>
+
+            <p>Just like links, the image tag also requires an <em>attribute</em> to define the file path of the image file. However, it uses the <code>src</code> attribute (not <code>href</code>).  The value can be an absolute or relative path. The below is an example of an absolute path.</p>
 
             <pre><code>&lt;img src="http://fillmurray.com/200/300"&gt;</code></pre>
 
@@ -534,10 +559,11 @@ The syntax for comments start with `&lt;!--` and ends with `--&gt;`.
             <p>If you don’t have a picture to use at the moment and need a placeholder, there are many services available such as:</p>
 
             <ul>
-            <li><a href="http://p-hold.com">http://p-hold.com</a></li>
+            <li><a href="http://placehold.it">http://placehold.it</a></li>
             <li><a href="http://placesheen.com/">http://placesheen.com/</a></li>
             <li><a href="http://placebear.com">http://placebear.com</a></li>
             <li><a href="http://fillmurray.com/">http://fillmurray.com/</a></li>
+            <li><a href="http://placekitten.com/">http://placekitten.com/</a></li>
             <li>and <a href="http://www.hanselman.com/blog/TheInternetsBestPlaceholderImageSitesForWebDevelopment.aspx">many more</a>!</li>
             </ul>
         </section>
@@ -571,36 +597,11 @@ Remember, relative paths are based on the folder structure.  Since the HTML page
         </section>
 
         <section class="slide" data-markdown>
-##Image Types
-There are many different file types that can be used for the web. Each type is best suited for specific kinds of images. Use the format that maintains the best quality while reducing the file size.
-
-**jpg** - used for photographs with lots of rich colours or gradients
-
-**png** - used for images with transparent or opaque backgrounds
-
-**gif** - used for images with minimal colour variation and of course, for animated gifs!
-
-**svg** - used for 2D graphics and is very scaleable. Based on XML and can be used as a image file or in the HTML document. When included as HTML, CSS can be used to style the svg!
-
-**More about SVG:** http://css-tricks.com/using-svg
-        </section>
-
-        <section class="slide centered gif-wall" data-markdown>
-##Bonus: gif wall
-
-![](framework/img/workshop/mind-blown.gif)
-![](framework/img/workshop/kid.gif)
-![](framework/img/workshop/raccoon.gif)
-![](framework/img/workshop/bday-cake.gif)
-![](framework/img/workshop/otter.gif)
-
-[image source]()
-        </section>
-
-        <section class="slide" data-markdown>
 ##Exercise #3 - Update the About page (15 mins)
 
-Let's add some more content to your About page. Use the `&lt;section>` tag to create a new sectioning block for the page content and add it under the `&lt;header>` tag and before the `&lt;footer>` like this:
+Add some more content to your About page. If you need to reference what you page should look like before adding these updates, take a look at [exercise2-about.html](project/examples/exercise2-about.html) in the **examples** folder.
+
+Use the `&lt;section>` tag to create a new sectioning block for the page content. Add it *between* the `&lt;header>` tag and the `&lt;footer>` like this:
 
 ```xml
 &lt;header&gt;
@@ -623,7 +624,9 @@ Let's add some more content to your About page. Use the `&lt;section>` tag to cr
 
 1. Inside of the `section` tag, add a profile picture.
 1. After the image tag, add an `h2` for the page title.
-1. After the `h2`, add a couple of paragraphs about you, or use placholder text.
+1. After the `h2`, add a couple of paragraphs about you, or use placeholder text.
+
+**Bonus:** Try adding a couple links. Ask a mentor how to get a link to open in a new tab/window.
 
 Just like images, there are many services available for placeholder text.
 
@@ -634,7 +637,7 @@ Just like images, there are many services available for placeholder text.
 * http://slipsum.com/
 * and [many more](http://meettheipsums.com/)!
 
-For your reference, [exercise3-about.html](project/examples/exercise3-about.html) can be found in your **examples** folder but only look if you get stuck! Try asking a mentor first!
+For reference, [exercise3-about.html](project/examples/exercise3-about.html) can be found in the **examples** folder but look only if you're stuck!
         </section>
     
         <section class="slide title" data-markdown>
@@ -645,9 +648,9 @@ For your reference, [exercise3-about.html](project/examples/exercise3-about.html
         <section class="slide" data-markdown>
 ##CSS & HTML
 
-CSS is its own language and has different syntax rules than HTML but it the two are closely paired. CSS is made up of rules that refer to HTML elements and define what those elements should look like.
+Though CSS and HTML are closely paired, CSS is a different language and has its own syntax rules. CSS is made up of *declarations* that refer to HTML elements and define what those elements should look like.
 
-CSS separates content (i.e. text) from presentation (i.e. text colour) and helps to reduce redundancy and save time.  
+CSS separates content (i.e. text) from presentation (i.e. text colour) and helps to reduce redundancy.  
 
 Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no longer be used because CSS takes care of presentation and styles.
         </section>
@@ -672,7 +675,7 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
         </section>
 
         <section class="slide">
-            <h2>CSS Syntax</h2>
+            <h2>CSS Terminology & Syntax</h2>
 
             <pre><code>h1 {
     color: blue;
@@ -694,6 +697,18 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
             </ul>        
         </section>
 
+        <section class="slide">
+            <h2>Write some CSS</h2>
+            <p>Let's change the  styles of the paragraphs on this slide using <code>font-size</code>.</p>
+
+            <textarea class="snippet">p {
+    
+}</textarea>
+            <div class="example">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam nesciunt sint beatae dolor dolorum aliquid quis explicabo vitae numquam, quas illo dolore molestiae ratione, perferendis, deleniti nemo ea voluptatibus! Quibusdam.</p>
+            </div>
+        </section>
+
         <section class="slide" data-markdown>
             ##Descendant selectors
             
@@ -704,7 +719,7 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
                 /* targets only anchor link tags nested inside of a p tag */
             }
             ```
-            **Protip!** Just like [Inception](http://www.imdb.com/title/tt1375666/), never go more than three levels deep. Truth.
+            **Protip!** Just like [Inception](http://www.imdb.com/title/tt1375666/), don't go more than three levels deep.
 
             ```
             nav ul li a span {
@@ -712,15 +727,13 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
             }
             ```
 
-            Feel free to skip a level but be mindful of specificity rules. For example, `nav ul li a` would override `nav a` because it's more specific. 
-
-            It’s usually easier to start with generic selectors and make them more specific, as needed, rather than starting with very specific selectors and adding extra markup or classes to try to override the styles.
+            Feel free to skip a level but be mindful of specificity rules. For example, `nav ul li a` would override `nav a` because it's more specific. It’s usually easier to start with generic selectors and make them more specific, as needed, rather than starting with very specific selectors and adding extra markup or classes to try to override the styles.
         </section>
 
         <section class="slide" data-markdown>
             ##Comments
             
-            Comments are written within a slash & asterix (`/* */`) and closes in the opposite order. Comments can be used for the same reasons as HTML comments: leaving notes, hiding code for later and for organization.
+            Comments in CSS are written within a slash & asterix (`/* */`) and closes in the opposite order. Comments can be used for the same reasons as HTML comments: leaving notes, hiding code for later and for organization.
             
             ```
             p {
@@ -742,43 +755,13 @@ Older presentational HTML tags like `&lt;center>` and `&lt;font>` should no long
         </section>
 
         <section class="slide" data-markdown>
-##Referencing CSS - Inline & Internal
+##Referencing CSS
 
-There are three ways to include (otherwise known as *referencing*) CSS in an HTML page.
+There are three ways to include (otherwise known as *referencing*) CSS in an HTML page. Today we'll be using the **external** method. To read more about **inline** and **internal**, view [this extra resource](framework/extras-referencing-css.html).
 
-**INLINE** - can be added to any HTML element using the `style` *attribute*.
+The external method links to a separate style sheet file and is recommended because it separates the CSS from the HTML document. Only the CSS file needs to be updated.
 
-```
-&lt;p style=&quot;color: blue;&quot;&gt;I'm writing CSS!&lt;/p&gt;
-```
-
-This technique should be avoided but it's good to know how it works in case you encounter it "in the wild."
-
-**INTERNAL** - uses `&lt;style&gt;` and is included in the `&lt;head&gt;` element.
-
-```    
-&lt;head&gt;
-    &lt;title&gt;Page Title&lt;/title&gt;
-    &lt;style&gt;
-        h1 {
-            font-size: 16px;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;p&gt;I'm still writing CSS!&lt;/p&gt;
-&lt;/body&gt;
-```
-
-This method is preferred over *inline* css, however it is still inefficient because if you had multiple web pages, the style block and any revision would have to be replicated on every single page.
-        </section>
-
-        <section class="slide" data-markdown>
-##Referencing CSS - External
-
-The external method links to a separate style sheet file and is recommended because it separates the CSS from the HTML document. The style sheet is referenced in the `&lt;head&gt;` of the document. Only the CSS file needs to be updated rather than the CSS block on every single page.
-
-Referenced in the head element with a `&lt;link&gt;` tag and two **attributes**, `rel` (relationship) and `href`. Just like creating links, the value of the `href` points to the location of the style sheet. 
+The style sheet is referenced in the `&lt;head&gt;` of the document with a `&lt;link&gt;` tag and two **attributes**, `rel` (relationship) and `href`. Just like links, the value of `href` points to the location of the style sheet. 
 
 Though it is not required, css files are often saved in a css folder for organization, so make sure the file path points to the appropriate directory.
 
@@ -793,14 +776,14 @@ Though it is not required, css files are often saved in a css folder for organiz
         <section class="slide" data-markdown>
 ##Mini-exercise
 
-Create a new CSS file by selecting **File > New File** in Sublime Text or use a shortcut, **CMND/CNTRL + N**. Name the file with a **.css** extension.  Some commonly used names are **global.css**, **main.css** or **style.css**.
+In Sublime Text, create a new CSS file by selecting **File > New File** or use shortcut, **CMND/CNTRL + N**. Name the file with a **.css** extension.  Some commonly used names are global.css, main.css or style.css. Let's use **style.css** and add it to **about.html**.
 
-Remember, external stylesheets are added using the `&lt;link>` tag.
+**Protip!** Sublime Text has a shortcut.  Type "link" with no brackets, then the tab key. Voila!
 
 ```
 &lt;link rel="stylesheet" href="css/style.css">
 ```
-**Protip!** Can't remember the syntax?  Sublime Text has a shortcut.  Simply type "link" with no angled brackets and press tab. Voila!
+
 
 Let's do a quick check to see if it works and is linked properly by adding a background color on the entire viewport as a test.
 
@@ -823,6 +806,32 @@ body {
 ```
         </section>
 
+        <section class="slide" data-markdown>
+            ##CSS colour values
+
+            **keywords** - use the actual name for most basic colours (red, green, blue, pink, etc) as well as a few fancy ones like "papayaWhip" and "paleGoldenrod".  
+            
+            **RGB (red-green-blue)** - Uses *three* numerical values from 0-255. 0 represents black, 255 represents white. See below for syntax.  
+            
+            **hex code** - Made up of the number sign (`#`) followed by six hexadecimal characters (0-9, A-F).
+            
+            ```
+            /* These are all the same colour */
+            p {
+                background: firebrick;
+                background: #B22222;
+                background: rgb(178,34,34);
+            }
+            ```
+
+            **Colour resources:**  
+            http://colours.neilorangepeel.com  
+            http://www.colorpicker.com  
+            http://www.colourlovers.com  
+            http://flatuicolors.com   
+            http://color.hailpixel.com
+        </section>
+
         <section class="slide title" data-markdown>
             #CSS & TYPOGRAPHY
         </section>
@@ -830,7 +839,7 @@ body {
         <section class="slide" data-markdown>
             ##Web safe fonts
 
-            Fonts can be changed with the `font-family` **property**. However, not all fonts are installed on all computers so it's recommended to use fonts that are considered *web safe* &mdash; fonts that are commonly included on most computers.
+            Fonts can be changed with the `font-family` property. However, not all fonts are installed on all computers so it's recommended to use fonts that are considered *web safe* &mdash; fonts that are commonly included on most computers.
 
             It's best practice to list at least two or three font options to provide a fall-back if the user doesn't have the preferred fonts installed.
 
@@ -857,25 +866,6 @@ body {
 
             That's it!
         </section>
-            
-        <section class="slide" data-markdown>
-            ##CSS color property
-            There are a few different ways to declare a colour value.
-
-            **colour keywords** - you can use the actual name of the colour for most basic colours (red, green, blue, pink) as well as a few fancy ones like "papayaWhip" and "paleGoldenrod".
-
-            **RGB (red-green-blue) / hex value** - the most common way to specify a colour. A hex code is made up of the number sign, #, followed by six hexadecimal characters (0-9, A-F) or three hexadecimal characters (0-9, A-F).
-
-            Not sure how to find these colours? As usual, the internet provides a plethora of resources.  
-
-            **Colour resources:**  
-            http://colours.neilorangepeel.com  
-            http://www.colorpicker.com  
-            http://www.colourlovers.com  
-            http://flatuicolors.com   
-            http://color.hailpixel.com
-        </section>
-
 
         <section class="slide">
             <h2>CSS Font Styles</h2>
@@ -892,10 +882,14 @@ text-transform: lowercase;</textarea>
             </div>
 
             <p>Resource: <a href="http://reference.sitepoint.com/css/typography">Sitepoint Typographical Properties</a></p>
+
+            <div class="presenter-notes">
+                <p>Explain what each property does while updating each example in the code editor.</p>
+            </div>
         </section>
 
         <section class="slide" data-markdown>
-            ##Cascading, Inheritance and Specificity
+            ##Cascading
 
             CSS executes from top to bottom (hence "cascading"), so be careful of the the order of your CSS declarations. The declaration that comes *after* will override the one that came before.
 
@@ -911,7 +905,7 @@ text-transform: lowercase;</textarea>
             ```
         </section>
         <section class="slide" data-markdown>
-            ##Cascading, Inheritance and Specificity
+            ##Inheritance and Specificity
 
             One of the strengths of CSS is styles can be inherited from parent to child elements using the family tree relationship between the elements.
 
@@ -933,58 +927,76 @@ text-transform: lowercase;</textarea>
 
             In the above example, the CSS properties in the body selector is inherited by the children and descendants so all the text would be blue and display the Helvetica font. However, when a more specific selector is used (`h1`), it overrides the inherited values because it's more *specific*.
         </section>
-    
-        <section class="slide" data-markdown>
-##Exercise #4 - Typography
+        
+        <section class="slide">
+            <h2>Lunchtime exercise!</h2>
 
-1. Practice using [Google Fonts](https://www.google.com/fonts).  Find 2-3 fonts to be used for the body text, header and highlighted text.  
+            <p>Picking fonts is hard. Prepare for the post-lunch exercise by picking 2-3 fonts from <a href="https://www.google.com/fonts">Google Fonts</a> for the body text, header and highlighted text. Here’s a <a href="/project/final/">the final project</a> for reference.</p>
+            
+            <p>Here’s some inspiration: <a href="http://hellohappy.org/beautiful-web-type/">http://hellohappy.org/beautiful-web-type/</a></p>
 
-    Picking fonts is hard. Need some help?  Try Source Sans Pro, Quicksand, Merriweather or Codystar.  The example project uses Open Sans (light), Nixie One and Pacifico. 
+            <p>Need some help? Try Source Sans Pro, Quicksand, Merriweather or Codystar. The example project uses Open Sans (light), Nixie One and Pacifico.</p>
 
-1. Add the Google font stylesheet to the `&lt;head>` of all three documents so the font files will load and can be accessed.  Put it *before* your CSS file.
+            <p>Feel free to peek at the next exercise ;)</p>
 
-    ```
-    &lt;title&gt;Jane Smith | About Me&lt;/title&gt;
-    &lt;link href='http://fonts.googleapis.com/css?family=Nixie+One|Open+Sans:300|Pacifico' rel='stylesheet' type='text/css'&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/styles.css&quot;&gt;
-    ```
+            <div class="presenter-notes">
+                <p>Aim to get to lunch around 12:30pm. A 45 min lunch is recommended since the afternoon covers a lot & more advanced concepts. Let the learners know this is optional but most people tend to enjoy continuing on a bit of exercises over the break. This will help speed up the next exercise and give them time to personalize their font choices without cutting into class time.</p>
+            </div>
+        </section>
+        <section class="slide">
+            <h2>Exercise #4 - Typography (20 MINS)</h2>
+            <ol>
+                <li>
+                    Pick 3 fonts from <a href="https://www.google.com/fonts">Google Fonts</a>.
+                </li>
+                <li>
+                    Add the Google font style sheet link to all three documents to access and use the font files. Put it before your CSS file.
 
-1. In the sample project, most of site uses the same font and color except for the `h1` and a couple of accented blocks of text.  Let's put the main font styles using the `body` selector.
+<pre><code>&lt;title&gt;Jane Smith | About Me&lt;/title&gt;
+&lt;link href='http://fonts.googleapis.com/css?family=Nixie+One|Open+Sans:300|Pacifico' rel='stylesheet' type='text/css'&gt;
+&lt;link rel="stylesheet" href="css/styles.css"&gt;
+</code></pre>
+                </li>
+                <li>
+                    In the sample project, most of site uses the same font and color except for the <code>h1</code> and a couple of accented blocks of text. Add the main font styles to the existing <code>body</code> declaration block.
+<pre><code>body {
+    font-family: "Open Sans", sans-serif;
+    color: #333;
+}
+</code></pre>
+                    Remember the family tree? Since <code>body</code> is the ancestor of all the elements nested within, these styles are inherited by the child &amp; descendant elements.
+                </li>
+                <li>
+                    <p>Make the main heading (your name) a different font to set it apart from the rest of the headings. Since this style is going to be applied only to the main heading, use <code>h1</code> as the selector.</p>
+<pre><code>h1 {
+    font-family: "Nixie One", serif;
+}
+</code></pre>
+                </li>
+                <li>
+                    Both <code>h1</code> and <code>h2</code> share similar styles. They both have uppercase letters and don’t use the default bold styles of headings. When multiple elements share the same styles, we can <strong>combine selectors</strong> to apply the styles in one declaration block. Combine selectors by separating them with a comma.
+<pre><code>h1, h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+}
+</code></pre>
+                </li>
+                <li>
+                    <p>Links by default are blue in colour so it does not inherit the color property declared in the body. To change the colour of the link, use the specific element selector.</p>
 
-    ```
-    body {
-        font-family: "Open Sans", sans-serif;
-        color: #333;
-    }
-    ```
-    Remember the family tree?  Since `body` is the ancestor of all the elements nested within, these styles are *inherited* by the child & descendant elements.
+                    <p>Make the color different from the rest of the text to indicate it’s a link. You can also remove the default underline with CSS as well!</p>
 
-1. Let's make the main heading (your name) a different font to set it apart from the rest of the headings. Since this style is going to be applied only to the main heading, use `h1` as the selector.
+<pre><code>a {
+    color: #bf6d50;
+    text-decoration: none;
+}
+</code></pre>
+                </li>
+            </ol>
 
-    ```
-    h1 {
-        font-family: "Nixie One", serif;
-    }
-    ```
-1. Both `h1` and `h2` share similar styles. They both are styled with uppercase letters and don't use the default bold styles of headings.  When multiple elements share the same styles, we can **combine** selectors to apply the styles in one declaration block.  Combine selectors by separating them with a comma.
+            <p><strong>Bonus:</strong> If you have extra time, find an accent colour to use throughout your site and update the above <code>color</code> value with your accent colour. Here are the <a href="index.html#slide42">links to the color resources</a> again.</p>
 
-    ```
-    h1, h2 {
-        font-weight: 300;
-        text-transform: uppercase;
-    }
-    ```
-1. Links by default are blue in colour so it does not inherit the color property declared in the body.  To change the colour of the link, use the specific element selector.  
-
-    Make the color different from the rest of the text to indicate it's a link.  You can also remove the default underline with CSS as well!
-    ```
-    a {
-      color: #bf6d50;
-      text-decoration: none;
-    }
-    ```
-
-Your page should look like [example 4](project/examples/exercise4-about.html).  As long as your CSS file is linked on three pages, notice how the styles are now shared across all three pages.
+            <p>Your page should look like <a href="project/examples/exercise4-about.html">example 4</a>. As long as your CSS file is linked on three pages, notice how the styles are now shared across all three pages.</p>
         </section>
 
         <section class="slide title" data-markdown>
@@ -1017,7 +1029,7 @@ Your page should look like [example 4](project/examples/exercise4-about.html).  
                 <li>1 value means the same amount of padding on all sides</li>
             </ul>
             
-            <p>Change some of the margin & padding settings below using 1-4 values and see what happens!</p>
+            Let's try changing some of the margin & padding settings below using 1-4 values and see what happens!
 
             <textarea class="snippet" data-subject="#padding">background: lightblue;
 width: 500px; 
@@ -1084,9 +1096,9 @@ margin: 0;</textarea>
         <section class="slide" data-markdown>
             ##Box Model Fix!
 
-            Luckily, there’s a fix for this. Enter the [box-sizing: border-box](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) fix ftw! (Updated Aug 2014)
+            Luckily, there’s a fix for this. Enter the [box-sizing: border-box](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) fix ftw!
 
-            It is recommended to add this snippet to all your projects.
+            It is recommended to add this snippet to all your projects. Let's add it to our CSS file now, to the very top of the file, since it's a global style.
 
             ```
             /* apply a natural box layout model to all elements, but allowing components to change */
@@ -1098,10 +1110,41 @@ margin: 0;</textarea>
             }
             ```
         </section>
+        <section class="slide" data-markdown>
+##Class Exercise - headings and padding
 
-         <section class="slide title" data-markdown>
-            #Inline & Block
-            #Elements
+Let's focus on checking these updates on your **About** page for this exercise. Remove the default space from the `h1` and `h2` and set the line-height. Add it to the the existing `h1,h2` declaration block.
+
+```
+h1, h2 {
+    font-weight: 300;
+    text-transform: uppercase;
+    margin: 0; /* removes default space */
+    line-height: 1; /* tightens up the space between the headings */
+}
+```
+Set the size for only the headings in the header.
+
+```
+header h1 {
+    font-size: 36px;
+}
+header h2 {
+    font-size: 18px;
+}
+```
+
+Add padding to `header` and `section` so there's an equal amount of space around the content blocks.
+
+```
+header,
+section {
+    padding: 20px 30px;
+}
+```
+Your page should look similar to this:
+
+![exercise 4 update](framework/img/workshop/exercise4-update.png)
         </section>
 
         <section class="slide" data-markdown>
@@ -1132,6 +1175,20 @@ margin: 0;</textarea>
             **Extra Resource**: [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Block-level_elements)
         </section>
 
+        <section class="slide" data-markdown>
+            ##CSS Display property
+
+            These default display styles can be changed using the CSS `display` property.
+
+            `display: inline` can be used to get block level elements to line up side by side, in a line.
+
+            `display: block` can be used to make inline elements behave like a block level element
+
+            `display: inline-block` is the best of both worlds. Elements will line up side by side, like inline elements and also render sizing properties like block elements.
+            
+            `display: none;` will hide the element.
+        </section>
+
         <section class="slide">
             <h2>Block & Inline Example</h2>
             <p>Suppose we had this HTML below. See how the same property and values give different results based on the element. Go ahead and update the CSS values to see how it changes.</p>
@@ -1146,145 +1203,249 @@ margin: 25px;</textarea>
 
             <textarea class="snippet" data-subject="#inline">background: orange;
 padding: 25px;
-margin: 25px;</textarea>
+margin: 25px;
+display: ;</textarea>
             <span id="inline">I'm a span so that makes me an inline element.</span> 
+
+            <div class="presenter-notes">
+                <p>Update the span example's display property to inline-block and block to demonstrate the differences.</p>
+            </div>
+        </section>
+
+        
+        <section class="slide" data-markdown>
+##Exercise #5 - Nav Updates (15 mins)
+
+Follow the instructions below. Check these changes on either the About or Contact page. The Home page will be styled later since it has a different style from these two pages.
+
+Though all the CSS is listed below, try adding in one line at a time to see and understand what each property does.  Leave comments for yourself in the code to explain what each line is doing if needed and use comments to organize your code. See [sample here](project/examples/css/exercise5.css).
+
+Remove default list styles and get each item to line up in a line.
+
+    nav ul {
+        list-style-type: none; /* removes bullets */
+        margin: 0; /* removes default margin */
+        padding: 0; /* removes default padding */
+    }
+    nav ul li {
+        display: inline-block; /* gets the list items to line up side by side */
+    }
+
+Add some space around the links. It's better to put padding on the anchor link rather the the list item because padding adds space on the *inside*.  Putting it on the link with make the click area bigger.
+    
+    nav a {
+        display: block; /* changes the element to block */
+        padding: 5px 15px;
+        text-transform: uppercase; 
+    }
+
+There's a few more concepts to go through to finish styling the header and nav. This is what your page should look like so far: [example 5 about](project/examples/exercise5-about.html) and [example 5 contact](project/examples/exercise5-contact.html).
+
+**Bonus**:  
+If you have some extra time, find a background image for later or choose one from the **images** folder. Here are some resources:
+
+* http://superfamous.com/
+* http://www.gratisography.com/
+* http://littlevisuals.co/
+* http://nos.twnsnd.co/
+* http://unsplash.com/
         </section>
 
         <section class="slide" data-markdown>
-            ##CSS Display property
+            ##Class Selectors
 
-            These default display styles can be changed using the CSS `display` property.
+            HTML provides ways to attach extra identifying information to target elements in a more specific way.
 
-            `display: inline` can be used to get block level elements to line up side by side, in a line.
+            A `class` *attribute* can be added to any element but the value is defined by you.  The class can then be used as a selector to apply styles to any element that references the class attribute.  Classes can be used multiple times on the same page. In CSS, classes are denoted by a leading period.
 
-            `display: block` can be used to make inline elements behave like a block level element
+            ```xml
+            &lt;p&gt;Regular text&lt;/p&gt;
+            &lt;p class=&quot;special&quot;&gt;Special text here.&lt;/p&gt;
+            ```
+            ```
+            p {
+                color: red;
+                font-family: Georgia, "Times New Roman", serif;
+            }
+            .special {
+                text-transform: uppercase;
+            }
+            ```
+        </section>
+        <section class="slide" data-markdown>
+            ##Mini-Exercise
 
-            `display: inline-block` is the best of both worlds. Elements will line up side by side, like inline elements and also render sizing properties like block elements.
+            Let's create a class called `highlight` and assign it an accent colour. Now this class can be added to any element and it will apply this particular style.
+
+            ```
+            .highlight {
+                color: #bf6d50;
+            }
+            ```
+
+            Using a span tag, wrap it around your first name on the homepage and apply this class. You can remove the space if you want the first & last name to appear closer together.
+
+            ```xml
+            &lt;h1&gt;&lt;span class=&quot;highlight&quot;&gt;Jane&lt;/span&gt;Smith&lt;/h1&gt;
+            ```
+
+            Now it looks like this!  Add this anywhere you want some highlighted text!
+
+            ![](framework/img/workshop/highlighted-text.png)
+        </section>
+        <section class="slide" data-markdown>
+            ##id Selectors
+
+            `id` *attributes* are similar to `class` *attributes* because it can also be added to any element.
+
+            However, it can be used only **once** per page.  IDs should be reserved for significant style rules. Some developers prefer not to use IDs at all for CSS styling because of the specificity rules and because classes can be used once or multiple times, making it more flexible.
+
+            In CSS, IDs are denoted by a leading hash symbol (`#`).
+            ```
+            #header {
+                width: 800px;
+            }
+            ```
+            IDs can also be used to link within the same page. [Read more about this technique here](http://www.webweaver.nu/html-tips/link-within-a-page.shtml).
+        </section>
+
+        <section class="slide" data-markdown>
+            ##class and id Names
+
+            When choosing a class or id name, choose a descriptive name and do not use spaces. Hyphens (-), underscores (_) and camel case are acceptable. CSS is also case sensitive, so while these three examples look similar, CSS will read these as three different classes so it's important (for you own sanity) to pick one style and be consistent.
             
-            `display: none;` will hide the element.
-
-            Let's go back to the previous slide's example and try using the `display` property.
+            ```
+            class="content-wrapper"
+            class="content_wrapper"
+            class="contentWrapper"
+            ```
         </section>
 
         <section class="slide" data-markdown>
             ##CSS Float Property
 
-            Remember, block-style HTML elements like `&lt;p>`, `&lt;div>` and `&lt;section>` automatically start on a new line and stack on top of each other. To get two block elements to align side-by-side, the `float` property can also be used. 
-
-            CSS floats can float elements left or right.
+            Remember, block-style HTML elements like `&lt;p>`, `&lt;div>` and `&lt;section>` automatically start on a new line and stack on top of each other. To get two block elements to align side-by-side, the `float` property can also be used to float elements left or right.
 
             **However**, we have to break the natural stacking flow when an element is floated. This will cause any element *after* the floated element to try to move up beside it or just not display properly because we've disrupted the natural stacking flow. The parent container will also collapse.
 
-            **Also**, if there is no width set, the element will float but the width will automatically be the width of its content.
+            **Also**, if no width is set, the element will float but the width will automatically be the width of its content.
         </section>
 
         <section class="slide centered">
             <h2>Huh?</h2>
             <img src="framework/img/workshop/huh.gif">
 
-            <p class="delayed">Not to worry Marky Mark, we can fix it.</p>
+            <p class="delayed">Not to worry, we can fix it.</p>
+        </section>
+
+        <section class="slide">
+            <h2>Float, Clear And Clearfix</h2>
+
+            <p>First we have to break it, then put it back together. We need to “reset” the float to get the rest of the page to go back to normal.  There are a couple ways to do it.</p>
+
+            <p>One of the most confusing CSS concepts is when to use the different techniques, <code>clear: both</code> or the <code>.clearfix</code> class.</p>
+            
+            <p>Let’s look at an example: <a href="http://jsfiddle.net/unjcxses/">http://jsfiddle.net/unjcxses/</a></p>
+
+            <p>Rule of thumb: if there’s is an element that <em>follows</em> the floated element, apply <code>clear: both</code> to that element. This will clear the float. If all the elements need to be floated, apply the <code>clearfix</code> to the parent element to force clear the children.</p>
+
+            <p>Want to know more about the clearfix trick and clearing floats? Here you go: <br>
+            <a href="http://css-tricks.com/snippets/css/clear-fix/">http://css-tricks.com/snippets/css/clear-fix/</a> <br>
+            <a href="http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/">http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/</a></p>
+
+            <div class="presenter-notes">
+                <p>Explain that you can fork or update the jsfiddle to create your own copy and it won't "mess up" the example. It will create a new URL and no account is required.</p>
+            </div>
         </section>
 
         <section class="slide" data-markdown>
-            ##Float, Clear And Clearfix
+##Update the CSS file
 
-            First we have to break it, then put it back together. We need to "reset" the float to get the rest of the page to go back to normal.  There are a couple ways to do it.
+Before moving onto the next exercise, let's add the [clearfix class](http://nicolasgallagher.com/micro-clearfix-hack/) to our CSS file, after the box model fix.
 
-            One of the most confusing CSS concepts is when to use the different techniques, `clear: both` or the `.clearfix` class. 
+```
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 
-            Rule of thumb: if there's is an element that *follows* the floated element, apply `clear: both` to that element. This will clear the float. If all the elements need to be floated, apply the `clearfix` to the parent element to force clear the children.
-
-            Let's look at an example here: http://jsfiddle.net/unjcxses/
-
-            Want to know more about the clearfix trick and clearing floats? Here you go:   
-            http://css-tricks.com/snippets/css/clear-fix/  
-            http://www.sitepoint.com/clearing-floats-overview-different-clearfix-methods/
-        </section>
-            
-        <section class="slide" data-markdown>
-            ##Update CSS file
-            Before moving onto the next exercise, let's add that [box-sizing fix](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) as well as the [clearfix class](http://nicolasgallagher.com/micro-clearfix-hack/) to our CSS file. Put this at the very top since they are global styles.
-            
-            ```
-            /* apply a natural box layout model to all elements, but allowing components to change */
-            html {
-              box-sizing: border-box;
-            }
-            *, *:before, *:after {
-              box-sizing: inherit;
-            }
-            
-            /* clears floated child elements */
-            .clearfix:before,
-            .clearfix:after {
-              content: " ";
-              display: table;
-            }
-            .clearfix:after {
-              clear: both;
-            }
-            ```
+/* clears floated child elements */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+```
         </section>
 
         <section class="slide" data-markdown>
-            ##Exercise #5 - Header & Nav (15 mins)
+            ##Add a quote
 
-            Follow the instructions below as far as you can. Check these changes on either the About or Contact page. The Home page will be styled after since it's different from the other two pages.
+            Before we practice using classes and floats, let's just add a bit more content to our **About** page.  In the final example, a quote has been added for some extra personalization.  Also, adding more content to the page will make it longer, therefore scrollable, which we'll need for a later exercise.
 
-            Though all the CSS is listed, try adding in one line at a time to see and understand what each property does.  Feel free to leave comments for yourself in the code to explain what each line is doing! 
+            Let's add a quote using the `blockquote` and `cite` tag. Feel free to use the example below, your own or one of the lorem ipsums. Add it under the paragraphs and below the closing `section` tag.
 
-            There's a couple more concepts to go through to finish styling the header and nav, so your page should look like [example 5](project/examples/exercise5-about.html).
-
-            **Bonus**: If you finish early, take some time to find a background image or pick on from the images folder or add some comments to your CSS to organize it.  See [sample here](project/examples/css/exercise5.css).
-
-            1. Remove the default space from the `h1` and `h2` and set the font size.
-
-                ```
-                h1, h2 {
-                    font-weight: 300;
-                    text-transform: uppercase;
-                    margin: 0; /* removes default space */
-                    line-height: 1; /* tightens up the space between the headings */
-                }
-                ```
-            1. Set the size for only the headings in the header.
-
-                ```
-                header h1 {
-                    font-size: 36px;
-                }
-                header h2 {
-                    font-size: 18px;
-                }
-                ```
-            1. Add padding to `header` and `section` so there's an equal amount of space around the content blocks.
-            
-                ```
-                header,
-                section {
-                  padding: 20px 30px;
-                }
-                ```
-            1. Remove default list styles and get each item to line up in a line.
-                ```
-                nav ul {
-                    list-style-type: none; /* removes bullets */
-                    margin: 0;
-                    padding: 0;
-                }
-                nav ul li {
-                    display: inline-block;
-                }
-                ```
-            1. Add some space around the links. It's better to put padding on the anchor link rather the the list item because padding adds space on the *inside*.  Putting it on the link with make the click area bigger.
-                
-                ```
-                nav a {
-                    padding: 5px 15px;
-                    text-transform: uppercase;
-                }
-                ```
+```xml
+&lt;blockquote&gt;
+    &lt;p&gt;The more that you read, the more things you will know. The more that you learn, the more places you'll go.&lt;/p&gt;
+    &lt;cite&gt;&#x2015; Dr. Seuss, I Can Read With My Eyes Shut!&lt;/cite&gt;
+&lt;/blockquote&gt;
+```
         </section>
+
+        <section class="slide" data-markdown>
+##Class Exercise - classes and floats
+
+Add a "profile-image" class to the image tag in your **About** page.  Then in your css file, add a new comment block at the bottom of the page for your **About** styles, to help organize your style sheet.  Then add `float` to get the text to wrap around the image.
+
+```css  
+/* ABOUT PAGE
+-----------------------------------------*/
+.profile-image {
+    float: left;
+}
+```
+
+The text floats now, but it's a little squishy. Try setting the image width to be 50% of the page and add some margin on the right to create space.
+
+    .profile-image {
+        float: left;
+        width: 50%;
+        margin-right: 20px;
+    }
+
+That looks much better but look what happened to the quote and the footer! All elements that come after floated elements want to float too as long as there is space for them.  Let's put the page back to its natural stacking order by *clearing the float*.  Put the `clear` on the `blockquote` element because that's where we want things to go back to normal. Let's add a class to it as well, in the HTML.
+
+```xml
+&lt;blockquote class=&quot;quote&quot;&gt;
+    ...
+&lt;/blockquote&gt; 
+```
+```
+.quote {
+    clear: both;
+}
+```
+
+While we're here, let's update it by center aligning the quote and add some spacing.
+
+```
+.quote {
+    clear: both;
+    text-align: center;
+    padding-top: 20px;
+}
+```
+
+Your page should now look similar to [exercise6a-about.html](project/examples/exercise6a-about.html).
+        </section>
+            
         <section class="slide" data-markdown>
             ##Positioning in CSS
             
@@ -1305,8 +1466,7 @@ margin: 25px;</textarea>
     background: blue;
     position: relative;
     top:;
-}
-            </textarea>
+}</textarea>
             <div id="#relative">
                 <div class="box"></div>
             </div>  
@@ -1315,11 +1475,14 @@ margin: 25px;</textarea>
         <section class="slide">
             <h2>Position: absolute</h2>
             
-            <p>When positioning an element as <code>absolute</code>, it needs to also be paired with <code>relative</code> positioning. <code>relative</code> on it's own doesn't affect other elements but it is used to <em>contain</em> an <code>absolute</code> position element to a particular spot. Otherwise, it will position itself to the <em>viewport</em>, or browser window.</p>
+            <p>When positioning an element as <code>absolute</code>, it can be tricky. It needs to also be paired with another positioning property, added to a parent element, to <em>contain</em> it to a particular spot.</p>
+
+            <p>Usually <code>relative</code> positioning is used because it doesn't affect other elements around it. However, the absolute values will be <em>relative</em> to the next parent element with relative, absolute or fixed positioning. If there is no such parent, it will default to the browser window.</p>
             <pre><code>&lt;div class=&quot;container&quot;&gt;
     &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-
+            
+            Try removing <code>position: relative;</code> in the example below and see what happens.<br>
             <textarea class="snippet" data-subject="#absolute">.container {
     position: relative;
 }
@@ -1328,7 +1491,7 @@ margin: 25px;</textarea>
     height: 100px; 
     background: blue;
     position: absolute;
-    top:;
+    top: 0;
 }</textarea>
 
             <div id="absolute">
@@ -1336,25 +1499,28 @@ margin: 25px;</textarea>
                     <div class="box"></div>
                 </div>
             </div>  
+            <div class="presenter-notes">
+                <p>Assure learners that this is a confusing concept and it will be demonstrated again in the upcoming exercise.</p>
+            </div>
         </section>
 
         <section class="slide">
             <h2>Position: fixed</h2>
             
-            <p>When positioning an element as <code>fixed</code>, it will <em>always</em> be positioned to the viewport. <code>relative</code> won't have any effect on this property. Also, it will always stay fixed on the page, even on page scroll.</p>
+            <p>When positioning an element as <code>fixed</code>, it will <em>always</em> be positioned to the viewport. <code>relative</code> or <code>absolute</code> won't have any effect on this property. Also, it will always stay fixed on the page, even on page scroll.</p>
             <pre><code>&lt;div class=&quot;container&quot;&gt;
     &lt;div class=&quot;box&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
             <textarea class="snippet" data-subject="#fixed">.container {
-    position:;
+    position: relative; /* has no effect on fixed */
 }
 .box { 
     width: 100px;
     height: 100px; 
     background: blue;
     position: fixed;
-    top:;
+    bottom: 0;
 }</textarea>
 
             <div id="fixed">
@@ -1364,138 +1530,57 @@ margin: 25px;</textarea>
             </div>  
         </section>
 
-        <section class="slide" data-markdown>
-            ##Class Selectors
+        <section class="slide">
+            <h2>Class Exercise - Positioning the Header &amp; Nav</h2>
 
-            HTML gives us a couple ways to attach extra identifying information to target elements in a way that is more specific. Two *attributes* called `class` and `id` can be used.
+            <p>Set the <em>entire</em> header itself to a fixed position so it stays in place at the top of the page on scroll.</p>
 
-            A `class` *attribute* can be added to any element but the value is defined by you.  The class can then be used as a selector to apply styles to any element that references the class attribute.  
+<pre><code>header {
+    position: fixed;
+}
+</code></pre>
 
-            Classes can be used multiple times on the same page. In CSS, classes are denoted by a leading period.
+            <p>Let's check these changes on our <strong>About</strong> page.</p>
+            <p>Positioning takes the element out of the natural stacking order.  See how the profile picture “jumped” underneath the header when <code>position: fixed</code> was applied? It’s because it doesn’t “see” that there’s an element before it, so it wants to slide up to the next available slot.  Add some padding on the top of the <code>section</code> element to push the content down below the fixed header. Then try scrolling down the page.</p>
 
-            ```xml
-            &lt;p&gt;Regular text&lt;/p&gt;
-            &lt;p class=&quot;special&quot;&gt;Special text here.&lt;/p&gt;
-            ```
-            ```
-            p {
-                color: red;
-                font-family: Georgia, "Times New Roman", serif;
-            }
-            .special {
-                text-transform: uppercase;
-            }
-            ```
-        </section>
-        <section class="slide" data-markdown>
-            ##Mini-Exercise
+<pre><code>section {
+    padding-top: 125px;
+}
+</code></pre>
 
-            Let's create a class called `highlight` and assign it an accent colour. I can now add this class to any element and it will apply this style.
+            <p>Update the <code>header</code> css by setting the background to white so the content underneath doesn’t show through when you scroll the page. Also, add a border on the bottom to create a separation of the header from the page content.</p>
 
-            ```
-            .highlight {
-                color: #bf6d50;
-            }
-            ```
+<pre><code>header {
+    position: fixed;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+</code></pre>
 
-            Using a span tag, wrap it around your first name on the homepage and apply this class.
+            <p>Why doesn’t the header go all the way across? When you position an element, it automatically becomes the width of its content. Set the width to 100% so it becomes as wide as the browser. </p>
 
-            ```xml
-            &lt;h1&gt;&lt;span class=&quot;highlight&quot;&gt;Jane&lt;/span&gt;Smith&lt;/h1&gt;
-            ```
+<pre><code>header {
+    position: fixed;
+    background: white;
+    border-bottom: 1px solid #eee;
+    width: 100%;
+}
+</code></pre>
 
-            Now it looks like this!  Add this anywhere you want some highlighted text!
+            <p>Next up, position the nav to the top right of the header element. Since the header already has positioning applied to it, the nav will be relative to it.</p>
 
-            ![](framework/img/workshop/highlighted-text.png)
-        </section>
-        <section class="slide" data-markdown>
-            ##id Selectors
+<pre><code>nav {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+</code></pre>
 
-            `id` *attributes* are similar to `class` *attributes* because it can also be added to any element and given any value.
-
-            However, it can be used only **once** per page.  IDs should be reserved for significant style rules. Some developers prefer not to use IDs at all for CSS styling because of the specificity rules and because classes can be used once or multiple times, making it more flexible.
-
-            In CSS, IDs are denoted by a leading hash symbol (`#`).
-            ```
-            #header {
-                width: 800px;
-            }
-            ```
-        </section>
-        <section class="slide" data-markdown>
-            ##class and id Names
-
-            When choosing a class or id name, choose a descriptive name and do not use spaces. Hyphens (-), underscores (_) and camel case are acceptable. CSS is also case sensitive, so while these three examples look similar, CSS will read these as three different classes so it's important (for you own sanity) to pick one style and be consistent.
+            <p>Your page should look like <a href="project/examples/exercise6-about.html">example 6</a>.  Note how the header looks the same on all three pages now… except the home page!  Where did the navigation disappear off to?</p>
             
-            ```
-            class="content-wrapper"
-            class="content_wrapper"
-            class="contentWrapper"
-            ```
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Exercise #6 - About, Header & Nav, pt 2
-
-            1. Position the nav to the top right of the header element.
-            
-                ```
-                nav {
-                  position: absolute;
-                  right: 20px;
-                  top: 20px;
-                }
-                ```
-
-            1. The entire header itself should be set to fixed positioning so when you scroll the page, it stays fixed at the top.
-                ```
-                header {
-                    position: fixed;
-                }
-                ```
-                Notice that adding this property changes the page. When you position an element, it automatically becomes the width of its content. Set the width to 100% so it becomes as wide as the browser. 
-
-                Also, set the background to white so the content underneath doesn't show through when you scroll the page. Add a border on the bottom to create a separation of the header from the page content.
-
-                ```
-                header {
-                    position: fixed;
-                    width: 100%;
-                    background: white;
-                }
-                ```
-            1. Positioning takes the element out of the natural stacking order.  See how the profile picture "jumped" underneath the header when position: fixed was applied? It's because it doesn't "see" that there's an element before it, so it wants to slide up to the next available slot.  Add some padding on the top of the section element to push the content down below the fixed header.
-                ```
-                section {
-                    padding-top: 125px;
-                }
-                ```
-            1. Add a class of "profile-image" to the image tag in your about page.  Add a left float to get the text to wrap around it.
-
-                ```
-                .profile-image {
-                  float: left;
-                }
-                ```
-            1. The text floats now, but it's a little squishy. Try setting the image widht to be 50% off the page and add some margin on the right to create space.
-
-                ```
-                .profile-image {
-                    float: left;
-                    width: 50%;
-                    margin-right: 20px;
-                }
-                ```
-            1. That looks much better but look what happened to the footer! All elements that come after floated elements want to float too as long as there is space for them.  Let's put the page back to it's natural stacking order by clearing the float on the footer because that's where we want things to go back to normal.
-
-                ```
-                footer {
-                    clear: both;
-                }
-                ```
-
-
-            Your page should look like [example 6](project/examples/exercise6-about.html).  Note how the header looks the same on all three pages now... except the home page!  Where did the navigation disappear off to?
+            <div class="presenter-notes">
+                <p>Reinforce the ordering of CSS styles for organization during this exercise and stress the importance of keeping the styles in related groupings to keep from possibly duplicating styles or creating specificity issues.</p>
+            </div>
         </section>
         
         <section class="slide" data-markdown>
@@ -1503,9 +1588,7 @@ margin: 25px;</textarea>
 
             The final design for the home page is different from the other two pages including the order of the HTML. On **index.html**, the nav HTML comes *before* the header.  The nav didn't disappear, it's just *under* the header.  
 
-            If the header wasn't set to be fixed to the top of the page, it would stack underneath the nav.
-
-            For the home page, we can use a **class** attribute to override the styles that are shared between the About and Contact page and apply specific styles needed for the home page.
+            For the Home page, we can add a `class` attribute to create a specific selector to override the styles that are shared between the About and Contact page. This class will allow us to apply specific styles just for the home page.
 
             Let's add a class to the `body` tag so we can override any styles for any element contained within the page.
 
@@ -1514,16 +1597,17 @@ margin: 25px;</textarea>
             ```
         </section>
         <section class="slide" data-markdown>
-            ##Exercise #7 - Homepage Header & Nav
+            ##Class Exercise #7 - Homepage Header & Nav
 
-            Override the header styles not needed for the home page.
+            These are the styles we are going to change to update the home page.
+
             * remove the fixed positioning
-            * removed the white background colour
+            * remove the white background colour
             * remove the border bottom
             * center align the text
             * push the heading down from the top of the page
 
-            We'll use the new `home` class we created to override the styles by using a more specific selector.
+            We'll use the new `home` class we created to override the styles by using a more *specific* selector.
 
             ```
             .home header {
@@ -1544,6 +1628,12 @@ margin: 25px;</textarea>
               font-size: 40px;
             }
             ```
+            
+            Add the `.highlight` class to your first name again, to match the styles on the other pages.
+            
+            ```xml
+            &lt;h1&gt;&lt;span class=&quot;highlight&quot;&gt;Jane&lt;/span&gt;Smith&lt;/h1&gt;
+            ```
 
             Your page should now look something like [example 7](project/examples/exercise7-home.html), located in your examples folder.
         </section>
@@ -1551,393 +1641,184 @@ margin: 25px;</textarea>
         <section class="slide" data-markdown>
             ##Sticky Footer
 
-            Remember the natural stacking order? HTML elements stack on top of each other in the order that they appear in the HTML.  Each element is a tall as their content (unless otherwise specified).  
+            Remember the natural stacking order? HTML elements stack on top of each other in the order that they appear in the HTML.  Each element is as tall as their content (unless otherwise specified).  
 
             On the home page, the footer appears right below the headings. On the about page, it appears on the bottom because the content is long enough to scroll.  And on the contact page, you can't even see it because it's hidden underneath the positioned header!
 
             To ensure that your footer is always at the bottom of the page, no matter how long the page content is or how big the browser window is, use a "sticky footer".
 
-            We'll be following these instructions: http://css-tricks.com/snippets/css/sticky-footer/
+            For "homework", [follow these instructions](framework/extras-sticky-footer.html) to create a sticky footer.
+
+            Let's finish the day with background images and forms!
         </section>
 
         <section class="slide" data-markdown>
-##Exercise #8 - Sticky Footer
+            ##Class Exercise #8: Background Images
 
-First, we need to create a page wrapper around the page content only, not the footer content.  The home page HTML will look like similar to this: 
-
-```
-&lt;div class=&quot;page-wrap&quot;&gt;
-    &lt;nav&gt;
-        ...
-    &lt;/nav&gt;
-
-    &lt;header&gt;
-        &lt;h1&gt;Jane Smith&lt;/h1&gt;
-        &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
-    &lt;/header&gt;    
-&lt;/div&gt;&lt;!-- close .page-wrap --&gt;
-&lt;footer&gt;
-  ...
-&lt;/footer&gt;
-```
-
-The about and contact pages will look like this:
-
-```
-&lt;div class=&quot;page-wrap&quot;&gt;
-    &lt;header&gt;
-        &lt;h1&gt;Jane Smith&lt;/h1&gt;
-        &lt;h2&gt;Web Developer + City Girl&lt;/h2&gt;
-
-        &lt;nav&gt;
-            ...
-        &lt;/nav&gt;
-    &lt;/header&gt;
-&lt;/div&gt;&lt;!-- close .page-wrap --&gt;
-&lt;footer&gt;
-    ...
-&lt;/footer&gt;
-```
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Sticky Footer CSS
-
-            ```
-            /* sticky footer */
-            html, body {
-              height: 100%;
-            }
-            .page-wrap {
-              min-height: 100%;
-              margin-bottom: -35px; /* equal to footer height */
-            }
-            .page-wrap:after {
-              content: "";
-              display: block;
-            }
-            footer, .page-wrap:after {
-              height: 35px; /* must be the same height as footer */
-            }
-            footer {
-              background: #222;
-              color: #ccc;
-            }
-            ```
-
-            Compare your page with [example 8](project/examples/exercise8-home.html).
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Forms: organizing the interface
-            
-            Forms are used to capture information from a user. The information processing and form submission usually requires the use of a server-side language such as PHP, Ruby or Python. But there are different services available to help do the processing for us without writing any of these languages!
-
-            Today we're going to use http://forms.brace.io/ to submit our form info and the information will be forwarded to your email. Simple!
-
-            All forms begin with the `form` element and requires 
-            two attributes, `method` (defines how the form will communicate with the web server) and `action` (provides the file path to where the form script is processed after the form is submitted.
-
-            Since we're using a 3rd party service, the `action` value is their url *and* the email you want the form to be submitted to.
-
-            ```xml
-            &lt;form method="POST" action="http://forms.brace.io/hello@email.com">
-                ...
-            &lt;/form>
-            ```
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Forms (continued)
-
-            `input` elements are used to allow the user to type in their information and is used with a `type` attribute to determine the kind of information it is.
-
-            The `label` tags are used to label the input.
-
-            The `name` attribute is used to label the fields when sending the form data to the server. 
-            
-            The `for` and `id` attributes are used to associate the label to the input and should have matching values.
-
-            A form can contain any HTML markup (paragraphs, lists, etc.) in addition to form specific HTML tags.
-
-            [Each part of a form is considered a paragraph](http://dev.w3.org/html5/spec-LC/forms.html#forms) and can be separated using `&lt;p>` elements. 
-
-            **Example:** [MDN form example](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Forms/How_to_structure_an_HTML_form/Example)
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Exercise #9 - Contact Form
-
-            On your contact page, under the header, create a `&lt;section>` tag.  Add the below markup *in between* the `section` element.
-
-            Brace.io requires that you verify your email. The verification email will be sent on the first form submit so make sure you test your form first!
-
-            ```xml
-            &lt;form class="contact-form" action=&quot;http://forms.brace.io/hello@your-email.com&quot; method=&quot;POST&quot;&gt;
-                &lt;h2&gt;Let's meet for coffee!&lt;/h2&gt;
-
-                &lt;p&gt;Send me a message at &lt;a href=&quot;mailto:hello@your-email.com&quot;&gt;hello@your-email.com&lt;/a&gt;, 
-                use the form below or say &quot;hi!&quot; on one of my social networks.&lt;/p&gt;
-                &lt;p&gt;
-                    &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
-                    &lt;input id=&quot;name&quot; type=&quot;text&quot; name=&quot;name&quot;&gt;
-                &lt;/p&gt;
-                &lt;p&gt;
-                    &lt;label for=&quot;email&quot;&gt;Email&lt;/label&gt;
-                    &lt;input id=&quot;email&quot; type=&quot;email&quot; name=&quot;replyto&quot;&gt;
-                &lt;/p&gt;
-                &lt;p&gt;
-                    &lt;label for=&quot;message&quot;&gt;Message&lt;/label&gt;
-                    &lt;textarea id=&quot;message&quot; name=&quot;message&quot;&gt;&lt;/textarea&gt;
-                &lt;/p&gt;
-                &lt;input type=&quot;submit&quot; value=&quot;SEND&quot;&gt;
-            &lt;/form&gt;
-            ```
-
-            Your contact page and form should look similar to [Example 9](project/examples/exercise9-contact.html).
-        </section>
-        <section class="slide" data-markdown>
-            ##Exercise #10 - Background Images
-
-            Before we style the contact form, let's go over how background images work.  We've added images in the HTML using `img` but we can also set images as a background style using CSS.
+            So far, we've used `background` to add colours. We can also use it to add images. We've added images in the HTML using `img` but we can also set images as a background style using CSS.
             
             ```
             background-image: url(path/to/file.jpg); /* longhand */
             background: url(path/to/file.jpg);/* shorthand */
             ```
-            Since our CSS file is *inside* a folder, use `../` to go *up and out* of the folder to get to the image files. Let's add it to our Contact page. Just like the home page, add a class to the `body` tag to override or customize any styles for any element contained within the contact page.
+            Since our CSS file is *inside* a folder, use `../` to go *up and out* of the folder to get to the image files. Let's add it to **index.html**. Create a `.home` declaration block so this image only displays on the homepage and spans the entire page. (There are a few to choose from in your images folder.)
 
             ```
-            &lt;body class=&quot;contact&quot;&gt;
-            ```
-
-            ```
-            .contact {
-                background: url(../images/your-image.jpg);
+            .home {
+                background: url(../images/background-6.jpg);
             }
             ```
             
-            Note how the images repeat (unless you have a really large image). We can override that with another property, `background-repeat` or just add it to the shorthand `background` property.
+            Notice how the images repeat (unless you have a really large image). We can change that with another property, `background-repeat` or just add it to the shorthand `background` property.
             
             ```
             /* shorthand */
-            .contact {
-                background: url(../images/background-1.jpg) no-repeat; 
+            .home {
+                background: url(../images/background-6.jpg) no-repeat; 
             }
 
             /* longhand */
-            .contact {
-                background-image: url(../images/background-1.jpg); 
+            .home {
+                background-image: url(../images/background-6.jpg); 
                 background-repeat: no-repeat;
             }
             ```
         </section>
         <section class="slide" data-markdown>
-            ##CSS3 Background-size
-
-            The image is no longer repeating but it doesn't fit the space either.  Thanks to CSS3, we can now change the size of a background image! 
-
-            Let's take a look at an example of the different options: http://jsfiddle.net/zyjtde73/1/
-
-            `background-size` is the longhand property.  To include it in the shorthand `background` property, it *must* be included after `background-position`, separated with the `/` character.  
+            ##Background images (continued)
             
-            ```
-            .contact {
-                background-image: url(../images/background-1.jpg);
-                background-repeat: no-repeat;
-                background-position: 50%;
-                background-size: 100%;
-            }
-            ```
-            ```
-            .contact {
-                background: url(../images/background-1.jpg) no-repeat 50% / 100%;
-            }
-            ```
-            If no background position value is being used, background-size won't work in the shorthand property so in this case, it may be less error prone to add it via the longhand property.
-            
-            ```
-            .contact {
-                background: url(../images/background-1.jpg) no-repeat 50%;
-                background-size: 100%;
-            }
-            ```
-        </section>
+            The image is no longer repeating but it doesn't fit the space either. Your page should look similar to the below (unless your image is larger than your resolution). We'll need to add one more property to fix this.
 
-        <section class="slide" data-markdown>
-            ##Exercise #10 - Background Images (continued)
-
-            1. Go back to the `.contact` CSS and add the background-size option.
-            
-                ```
-                .contact {
-                    background: url(../images/background-8.jpg) no-repeat;
-                    background-size: cover;
-                }
-                ```
-
-            2. Add a different background image for the home page.
-
-            There are a few background images in your project folder to choose from or check out these resources for free images:
-
-            * http://superfamous.com/
-            * http://www.gratisography.com/
-            * http://littlevisuals.co/
-            * http://nos.twnsnd.co/
-            * http://unsplash.com/
-
-
-            Your pages should now look similar to [example 10](project/examples/exercise10-home.html).
+            ![homepage background](framework/img/workshop/homepage-norepeat.png)
         </section>
 
         <section class="slide">
-            <h2>Center aligning with margin</h2>
-            <p>The margin property can also be used to center align block level elements. First, a width needs to be set. Then, setting the left &amp; right values to <code>auto</code> will find the center of the page. The <code>0</code> just refers to the top and bottom value.</p>
+            <h2>Class exercise #8: Background-size</h2>
 
-            <textarea class="snippet" data-subject="#margin-auto">background-color: lightblue;
-height: 100px;
-width: 600px;
-margin: 0 auto;</textarea>
-            <div id="margin-auto">box</div>
+            <p>Thanks to CSS3, we can now change the size of a background image. </p>
+            <p><code>background-size</code> is the longhand property.  To include it in the shorthand <code>background</code> property, it <em>must</em> be included after <code>background-position</code>, separated with the <code>/</code> character.  </p>
+<pre><code>.home {
+    background-image: url(../images/background-6.jpg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+}</code></pre>
+
+<pre><code>.home {
+    background: url(../images/background-6.jpg) no-repeat 50% / cover;
+}</code></pre>
+            <p>If no background position value is being used, background-size won’t work in the shorthand property so in this case, it may be less error prone to add it via the longhand property.</p>
+<pre><code>.home {
+    background: url(../images/background-6.jpg) no-repeat 50%;
+    background-size: cover;
+}
+</code></pre>
+            
+            <p>For good measure, since this image is a background image of the <code>body</code>, let's add one more rule to ensure the image covers the whole viewport and not just the height of the page content.</p>
+<pre><code>html, body {
+    height: 100%;
+}
+</code></pre>
+            <p><strong>Extra resources about background:</strong> <br>
+            <a href="http://jsfiddle.net/zyjtde73/1/">http://jsfiddle.net/zyjtde73/1/</a><br>
+            <a href="http://www.css3.info/preview/background-size/">More about background-size</a></p>
+
+            <p>Here are some resources for free images:</p>
+            
+            <ul>
+                <li><a href="http://superfamous.com/">http://superfamous.com/</a></li>
+                <li><a href="http://www.gratisography.com/">http://www.gratisography.com/</a></li>
+                <li><a href="http://littlevisuals.co/">http://littlevisuals.co/</a></li>
+                <li><a href="http://nos.twnsnd.co/">http://nos.twnsnd.co/</a></li>
+                <li><a href="http://unsplash.com/">http://unsplash.com/</a></li>
+            </ul>
+
+            <p>Your page should now look similar to <a href="project/examples/exercise8-home.html">example 8</a>.</p>
+
+            <div class="presenter-notes">
+                <p>You will probably be pressed for time at this point. Just explain what "cover" does and let them know there are other options available and there are additional resources at the bottom of this slide.</p>
+            </div>
         </section>
 
         <section class="slide" data-markdown>
-            ##Exercise #11 - Contact Form (continued)
-
-            In the markup for the form, a class of `contact-form` was included in the `form` tag to be used for styling since all the form elements are contained within it.
-
-            1. Set a width for the form and center align it on the page. Also add a background colour to see the text more clearly over the image.
-
-                ```
-                .contact-form {
-                    width: 600px;
-                    margin: 10px auto;
-                    background: white;
-                }
-                ```
+            ##Forms
             
-            1. Add some padding to `contact-form` to keep the text from going right up to the edge. Also try adding the CSS property `border-radius` to add some rounded corners.
+            Forms are used to capture information from a user. The information processing and form submission usually requires the use of a server-side language such as PHP, Ruby or Python. But there are different services available to help do the processing for us without writing any of these languages!
 
-                ```
-                .contact-form {
-                    width: 600px;
-                    margin: 10px auto;
-                    background: white;
-                    padding: 20px;
-                    border-radius: 4px;
-                }
-                ```
-            1. To get the input and textarea to span all the way across the form, we can set the width to 100% so it takes up the entire width of the form. It's also possible to override the default border styles too.  Add height to the textarea just to give more room for the user to type a message.
+            Let's look at the markup first.
 
-                ```
-                input, 
-                textarea {
-                  width: 100%;
-                  border: 1px solid #ccc;
-                  padding: 5px;
-                }
-                textarea {
-                  height: 100px;
-                }
-                ```
-            Your form should look similar to [example 11](project/examples/exercise11-contact.html).
+            All forms begin with the `form` element and requires 
+            two attributes, `method` (defines how the form will communicate with the web server) and `action` (provides the file path to where the form script is processed after the form is submitted.
 
-            There's so much more you can do with forms. Check out this project's final css file to see what other changes you can add or take a look at this resource: http://code.tiffbits.com/css3-form-styling-cheat-sheet/
-        </section>
-
-        <section class="slide" data-markdown>
-            ##Getting ready Final Exercise #12
-
-            Before creating the home page drop down menu, we'll need to talk about icon fonts and pseudo class first.
-            
-            ###Icon fonts
-            Icon fonts are an easy way to add imagery to your web page but still have the flexibility of styling properties like size and colour using CSS since they *are* fonts!
-
-            There's many to choose from but today we'll use Font Awesome:  
-            [http://fortawesome.github.io/Font-Awesome/](http://fortawesome.github.io/Font-Awesome/)
-
-            Under **Getting Started**, there are different options for adding the font files.  If using the CDN, remember to add the "http" to make it work when you run your page "locally" (on your computer).
-            
-            Simple to use, pick an icon you'd like to use and copy the supplied markup and class and that's it!
-
-            ###Pseudo Class  
-            A CSS pseudo-class is a selector that specifies a specific *state* of the selected element. Today we will be using `:hover` to apply a style only when the user hovers over the element specified by the selector.
-            
-            More about pseudo classes: https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes
-        </section>
-        <section class="slide" data-markdown>
-            ##Exercise #12 - Home Page Drop down menu
-
-            1. Add [Font Awesome's CSS file](http://fortawesome.github.io/Font-Awesome/get-started/) to the `head` of your document and the markup for the [three-bar icon](http://fortawesome.github.io/Font-Awesome/icon/bars/) to the navigation.
-            ```
-            &lt;link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-            ```
             ```xml
-            &lt;nav&gt;
-                &lt;i class=&quot;fa fa-bars&quot; title=&quot;menu&quot;&gt;&lt;/i&gt;
-                &lt;ul&gt;
-                    &lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href=&quot;about.html&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
-                    &lt;li&gt;&lt;a href=&quot;contact.html&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/nav&gt;
+            &lt;form method="POST" action="path/to/form/script/processing">
+                ...
+            &lt;/form>
             ```
-            It should look like this:  
-            ![](framework/img/workshop/menu-with-icon.png)
-        </section>
-        <section class="slide" data-markdown>
-            ##Exercise #12 - Home Page Drop down menu
-            
-            The next step is to override the horizontal navigation styles that are shared among the other pages and make it specific to the home page.  There is already a class of `home` in the body so we can use that to make our selector more specific.
-
-            1. Set the list items to display block so they line up on top of each other.
-
-                ```
-                .home nav li {
-                    display: block;
-                }
-                ```
-
-            1. Right align the icon and the list items.  Can be added to the `nav` selector so icon and list items will inherit the styles.  Change the font size to make it bigger too.  The icon will also need a little bit of padding to make the hover target a little bigger and for alignment.
-                ```
-                .home nav {
-                    text-align: right;
-                    font-size: 25px;
-                }
-                .fa-bars {
-                    padding: 15px;
-                }
-                ```
-            
-            1. Now we need to hide the navigation list and show it when you hover over the icon.  Hide the list first.
-                ```
-                .home nav ul {
-                    display: none;
-                }
-                ```
-
-            1. With CSS, you can apply a hover on a parent element and use the descendant selector to change the style of it's children!
-
-                ```
-                .home nav:hover ul {
-                    display: block;
-                }
-                .home a:hover {
-                    color: black;
-                }
-                ```
-            
-            Your home page should now look similar to [example 12](project/examples/exercise12-home.html).
         </section>
 
+        <section class="slide">
+            <h2>Class Exercise #9 - Contact Form</h2>
+
+            <p>On your contact page, under the header, create a new <code>&lt;section&gt;</code> tag.  Add the below markup <em>in between</em> the <code>section</code> element.</p>
+
+<pre><code class="xml">&lt;section&gt;
+    &lt;form class="contact-form" method="POST" action="" &gt;
+        &lt;h2&gt;Let's meet for coffee!&lt;/h2&gt;
+
+        &lt;p&gt;Send me a message at &lt;a href="mailto:hello@your-email.com"&gt;hello@your-email.com&lt;/a&gt;, 
+        use the form below or say "hi!" on one of my social networks.&lt;/p&gt;
+        &lt;p&gt;
+            &lt;label for="name"&gt;Name&lt;/label&gt;
+            &lt;input id="name" type="text" name="name"&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+            &lt;label for="email"&gt;Email&lt;/label&gt;
+            &lt;input id="email" type="email" name="replyto"&gt;
+        &lt;/p&gt;
+        &lt;p&gt;
+            &lt;label for="message"&gt;Message&lt;/label&gt;
+            &lt;textarea id="message" name="message"&gt;&lt;/textarea&gt;
+        &lt;/p&gt;
+        &lt;input type="submit" value="SEND"&gt;
+    &lt;/form&gt;
+&lt;/section&gt;
+</code></pre>
+            <p>Your contact page and form should look similar to <a href="project/examples/exercise9-contact.html">Example 9</a>.</p>
+
+            <div class="presenter-notes">
+                <p>Give a general overview of what each from control is used for as you are adding in the code. There's further resources available in the homework/next steps section.</p>
+
+                <p>This will be the official last exercise for the day. If you find yourself with extra time, congratulate the class on picking up the concepts so well and either give them free time to tweak their projects or pick one of the homework assignments to go through together. Save some time to briefly cover the next steps.</p>
+            </div>
+        </section>
+
+        <div class="slide centered" data-markdown>
+            ##And we're done!
+
+            ![what?](http://i.imgur.com/RpCC4.gif)
+
+            Ok, not quite done. Let's talk about some next steps.
+        </div>
+                
+        <div class="slide" data-markdown>
+            ##Next Steps & "Homework"
+            
+            Though we've covered a lot of material today, there are still lots of things to add to give your web page that extra personalization, finalize some styles and add some polish.
+
+            Here are some additional lessons you can try:
+            
+            * [Sticky Footer](framework/extras-sticky-footer.html)
+            * [Contact page](framework/extras-form-styles.html) - adding background images & form styling
+            * [Forms, pt 2](framework/extras-form-submission.html) - how to submit a form
+            * [Home page: additional styles](framework/extras-homepage.html) - includes using icon fonts and creating a drop down menu.
+            * [Add a favicon](http://blog.teamtreehouse.com/how-to-make-a-favicon)
+            * Use the [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) to add your social icons to the footer. 
+
+            Take a look at the HTML & CSS files in the **final** folder and see what other tricks you can add to your project.
+        </div>
         <section class="slide" data-markdown>
-            ##Next steps & "Homework"
-
-            Though we've covered a lot of material today, there are still lots of things to add to give your web page that extra personalization and polish.  
-
-            Take a look at the files in the **final** folder for some ideas. Use the Font Awesome icons to add your social icons to the footer or try adding a [favicon](http://blog.teamtreehouse.com/how-to-make-a-favicon).
-
-            There are also plenty of online resources available such as: 
+            ##Online resources
 
             * [A Beginners Guide to HTML & CSS](http://learn.shayhowe.com/html-css/)  
             * [Code School](https://www.codeschool.com)  
@@ -1954,9 +1835,19 @@ margin: 0 auto;</textarea>
         <section class="slide" data-markdown>
             ##Getting your site online
 
+            To get your site online and available to the public, the folder containing the HTML documents and related files (images, css, javascript files, etc) must be moved to a *server* that *hosts* websites.
+
+            To move web files from your computer to a server, an FTP program like [Filezilla](https://filezilla-project.org) or [CyberDuck](https://cyberduck.io) must be used.
+
+            ![web request process](framework/img/workshop/web-server.png)
+        </section>
+
+        <section class="slide" data-markdown>
+            ##Getting your site online
+
             You will need to register a domain name (www.mysite.com) and get hosting. Here are a couple domain & hosting options:
             
-            * [hover.com](https://www.hover.com/?ircid=2799&irmpname=Ladies+Learning+Code)
+            * [hover.com](hover.com/ladiescode)
             * [dreamhost.com](http://www.dreamhost.com/r.cgi?205190)  
             * [bluehost.com](http://www.bluehost.com/)
 
@@ -1988,33 +1879,30 @@ margin: 0 auto;</textarea>
         <p class="license"><a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" src="framework/img/cc-by-nc.svg" /></a> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://ladieslearningcode.com" property="cc:attributionName" rel="cc:attributionURL">Ladies Learning Code</a></p>
         <p class="instructions">Use the left <i class="fa fa-arrow-left"></i> and right <i class="fa fa-arrow-right"></i> arrow keys to navigate</p>
     </footer>
-
+    
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="framework/scripts/slideshow.js"></script>
 
     <!-- Uncomment the plugins you need -->
     <script src="framework/scripts/plugins/css-edit.js"></script>
     <script src="framework/scripts/plugins/css-snippets.js"></script>
-    <script src="framework/scripts/plugins/css-controls.js"></script>
-    <!-- <script src="plugins/code-highlight.js"></script>-->
-
     <script src="framework/scripts/plugins/markdown/marked.js"></script>
     <script src="framework/scripts/plugins/markdown/markdown.js"></script>
     <script src="framework/scripts/plugins/highlight/highlight.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-
-    <!-- Prettify -->
-    <script src="framework/scripts/plugins/prettify.js"></script>
-    <script src="framework/scripts/plugins/lang-css.js"></script>
-    <script src="framework/scripts/plugins/prism.js"></script>
-
     <script>
-    var slideshow = new SlideShow();
+        var slideshow = new SlideShow();
 
-    // Grabs all the .snippet elements
-    var snippets = document.querySelectorAll('.snippet');
-    for(var i=0; i<snippets.length; i++) {
-        new CSSSnippet(snippets[i]);
-    }
+        // Grabs all the .snippet elements
+        var snippets = document.querySelectorAll('.snippet');
+        for(var i=0; i<snippets.length; i++) {
+            new CSSSnippet(snippets[i]);
+        }
+
+        // Add "edit me" to editable code blocks
+        jQuery(document).ready(function(){
+            jQuery(".snippet").before("<span class=\"edit\">edit me</span>");
+        });
     </script>
 </body>
 </html>

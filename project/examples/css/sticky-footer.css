@@ -90,10 +90,6 @@ nav a {
 
 /* HOME PAGE
 -----------------------------------------*/
-.home {
-  background: url(../images/background-6.jpg) no-repeat;
-  background-size: cover;
-}
 .home header {
   position: static;
   background: transparent;
@@ -118,34 +114,14 @@ nav a {
 }
 
 
-/* CONTACT PAGE
------------------------------------------*/
-.contact {
-  background: url(../images/background-8.jpg) no-repeat;
-  background-size: cover;
-}
-.contact-form {
-  width: 600px;
-  margin: 10px auto;
-  background: white;
-  padding: 20px;
-  border-radius: 4px;
-}
-input, 
-textarea {
-  width: 100%;
-  border: 1px solid #ccc;
-  padding: 5px;
-}
-textarea {
-  height: 100px;
-}
-
-
 /* FOOTER
 -----------------------------------------*/
 footer {
   clear: both;
+  padding: 5px;
+}
+footer p {
+  margin: 0; /* removes default margin */
 }
 /* sticky footer */
 html, body {
@@ -153,14 +129,14 @@ html, body {
 }
 .page-wrap {
   min-height: 100%;
-  margin-bottom: -35px; /* equal to footer height */
+  margin-bottom: -35px; /* must be the same height as footer */
 }
 .page-wrap:after {
   content: "";
   display: block;
 }
 footer, .page-wrap:after {
-  height: 35px; /* must be the same height as footer */
+  height: 35px; /* However tall you want the footer to be. */
 }
 footer {
   background: #222;
